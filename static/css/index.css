@@ -1,0 +1,38 @@
+.confirm-buttons {
+    background-color: #48c4c2;
+}
+
+.links {
+    color:#48c4c2;
+}
+
+
+.jumbotron {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      url("/5.png");
+    background-clip: calc();
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 600px; 
+    width: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .jumbotron {
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0)
+          ),
+          url("/5.png");
+
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 600px; 
+        width: 100%;
+      }
+  }
