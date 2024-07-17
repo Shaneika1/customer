@@ -64,7 +64,7 @@
                     >
                 </li>
                 <li>
-                    <a href="#" style='background-color: #48c4c2;' class=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <a href="#" style='background-color: #48c4c2;' class="mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
                         Login
                       </a>
                       
