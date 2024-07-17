@@ -6,6 +6,11 @@
     color:#48c4c2;
 }
 
+.footer-f {
+  background-color: #48c4c2;
+
+}
+
 .top-block {
   background-color: #b1ebf1;
   min-width: 100%;
@@ -43,6 +48,20 @@
         rgba(255, 255, 255, 0)
       ),
       url("/5.png");
+    background-clip: calc();
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 600px; 
+    width: 100%;
+  }
+
+  .vip {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      url("/1.png");
     background-clip: calc();
     background-size: cover;
     background-repeat: no-repeat; 
