@@ -44,14 +44,14 @@
             >
                 <li>
                     <a
-                        href="#"
+                        href="/"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Home</a
                     >
                 </li>
                 <li>
                     <a
-                        href="#"
+                        href="/guestOrder"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Order</a
                     >

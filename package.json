@@ -21,6 +21,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"moment": "^2.30.1"
+		"@supabase/supabase-js": "^2.44.4",
+		"axios": "^1.7.2",
+		"moment": "^2.30.1",
+		"sweetalert2": "^11.12.2"
 	}
 }

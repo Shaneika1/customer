@@ -21,6 +21,10 @@
   font-size: 20px;
 }
 
+.guest-order-section{
+  min-height:800px
+}
+
 .nate-row {
   display: flex;
 }
