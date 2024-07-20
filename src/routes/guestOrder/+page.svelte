@@ -86,11 +86,15 @@
                     day,
                     time,
                     budget,
+                    items,
                     status: "Waiting for payment",
                     orderId,
                 })
                 .then((res) => {
-                    swal.fire("Success", "Order has been placed", "success");
+                    swal.fire("Success", "Order has been placed", "success").then(res => {
+                        window.location.href = '/guestSuccess'
+                    });
+                   
                 });
         } else {
             const params = new URLSearchParams();
