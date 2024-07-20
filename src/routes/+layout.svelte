@@ -1,3 +1,21 @@
+<script lang='ts'>
+    import { onMount } from "svelte";
+    import supabase from "../lib/supabase";
+
+    let loggedIn:boolean = false;
+
+    const logout = () => {
+        localStorage.clear()
+        window.location.href = '/login'
+    }
+
+    onMount(() => {
+        if(localStorage.getItem('token')) {
+            loggedIn = true;
+        }
+    })
+</script>
+
 <nav class="bg-white drop-shadow-2xl border-gray-200">
     <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -64,10 +82,17 @@
                     >
                 </li>
                 <li>
-                    <a href="#" style='background-color: #48c4c2;' class="mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
+                    {#if loggedIn == false}
+                    <a href="/authentications/login" style='background-color: #48c4c2;' class="mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
                         Login
                       </a>
-                      
+                      {/if}
+
+                      {#if loggedIn == true}
+                        <a on:click={() => logout()} style='background-color: #FF333F;' class="cursor mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
+                            Logout
+                        </a>
+                      {/if}
                 </li>
             </ul>
         </div>
