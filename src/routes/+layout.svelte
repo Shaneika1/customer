@@ -67,13 +67,7 @@
                         >Home</a
                     >
                 </li>
-                <li>
-                    <a
-                        href="/guestOrder"
-                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
-                        >Order</a
-                    >
-                </li>
+                
                 <li>
                     <a
                         href="#"
@@ -81,6 +75,46 @@
                         >Blog</a
                     >
                 </li>
+                {#if loggedIn == false}
+                <li>
+                    <a
+                        href="/guestOrder"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Order</a
+                    >
+                </li>
+                {/if}
+                {#if loggedIn == true}
+                <li>
+                    <a
+                        href="/order"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Order</a
+                    >
+                </li>
+
+                <li>
+                    <a
+                        href="/order"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Lists</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/order"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Addresses</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/order"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Profile</a
+                    >
+                </li>
+                {/if}
                 <li>
                     {#if loggedIn == false}
                     <a href="/authentications/login" style='background-color: #48c4c2;' class="mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
