@@ -15,6 +15,14 @@ export async function checkLogin() {
     }
 }
 
+export async function getUser(token:string): Promise<any> {
+    let data = await supabase.from('customers').select().eq('token', token)
+    if(data.data?.length == 0) {
+        window.location.href = '/'
+    }
+    return data.data[0]
+}
+
 export async function generateOrderId(): Promise<number> {
     let orderId:number = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
  

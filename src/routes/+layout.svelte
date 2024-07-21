@@ -102,7 +102,7 @@
                 </li>
                 <li>
                     <a
-                        href="/order"
+                        href="/addresses"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Addresses</a
                     >
