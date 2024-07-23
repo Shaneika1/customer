@@ -602,23 +602,23 @@
 
                         <div>
                             <table
-                                class="w-full text-sm text-left rtl:text-right text-gray-500"
+                                class="w-full "
                             >
-                                <thead class="text-xs text-gray-700 uppercase">
+                                <thead class="">
                                     <tr>
-                                        <th scope="col" class="px-2 py-3">
+                                        <th scope="col" >
                                             Name
                                         </th>
 
-                                        <th scope="col" class="px-2 py-3">
+                                        <th >
                                             Brand
                                         </th>
 
-                                        <th scope="col" class="px-2 py-3">
+                                        <th >
                                             Quantity
                                         </th>
 
-                                        <th scope="col" class="px-2 py-3">
+                                        <th >
                                             Action
                                         </th>
                                     </tr>
