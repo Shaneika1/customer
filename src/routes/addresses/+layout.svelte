@@ -1,6 +1,6 @@
 <script lang='ts'>
     import { onMount } from "svelte";
-    import supabase from "../lib/supabase";
+    import supabase from "../../lib/supabase";
 
     let loggedIn:boolean = false;
 
@@ -14,7 +14,6 @@
             loggedIn = true;
         }
     })
-    
 </script>
 
 <nav class="bg-white drop-shadow-2xl border-gray-200">
@@ -95,10 +94,16 @@
                         >Lists</a
                     >
                 </li>
-                
                 <li>
                     <a
-                        href="/profile"
+                        href="/addresses"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Addresses</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/order"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Profile</a
                     >

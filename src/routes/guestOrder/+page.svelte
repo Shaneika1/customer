@@ -86,6 +86,7 @@
                     day,
                     time,
                     budget,
+                    guest: true,
                     items,
                     status: "Waiting for payment",
                     orderId,

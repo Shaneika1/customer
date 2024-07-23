@@ -52,22 +52,22 @@
             <p
                 class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
-                Create or edit your addresses here
+                Create your addresses here
             </p>
         </div>
 
         
 
-    <div class="relative overflow-x-auto px-10">
-        <div class="lg:grid lg:grid-cols-2 text-left px-24">
+    <div class="relative  mx-10 p-10 "style='box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;'>
+        <div class="lg:grid lg:grid-cols-2 text-left lg:px-24 overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                 <thead class="text-xs text-gray-700 uppercase  ">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6  py-1">
                             Address
                         </th>
                     
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6  py-1">
                             Action
                         </th>
                     </tr>
@@ -75,10 +75,10 @@
                 <tbody>
                     {#each addresses as address}
                         <tr class="bg-white border-b  ">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                            <th scope="row" class="px-6  py-1 font-medium text-gray-900 whitespace-nowrap ">
                                 {address.address}
                             </th>
-                            <th scope="row" on:click={() => deleteAddress(address.id)} style='cursor:pointer' class="px-6 py-4 text-red-500 font-medium text-gray-900 whitespace-nowrap ">
+                            <th scope="row" on:click={() => deleteAddress(address.id)} style='cursor:pointer' class="px-6  py-1 text-red-500 font-medium text-gray-900 whitespace-nowrap ">
                                 Delete
                             </th>
                         </tr>
