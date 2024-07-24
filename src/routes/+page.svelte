@@ -4,7 +4,7 @@
     let valid = false
 
     onMount(() => {
-        token = localStorage.getItem('token')
+        let token = localStorage.getItem('token')
         if(token) {
             valid = true;
         }
@@ -183,8 +183,8 @@
                 href="/blogs"
                 class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-40 normal-text"
             >
-                <a
-                    href="/blogs"
+                <p
+                   
                     style="background-color: #48c4c2;"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                 >
@@ -204,7 +204,7 @@
                             d="M1 5h12m0 0L9 1m4 4L9 9"
                         />
                     </svg>
-                </a>
+                </p>
             </a>
         </div>
     </div>
