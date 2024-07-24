@@ -141,10 +141,10 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Links</h2>
                   <ul class="text-gray-800 dark:text-gray-800 font-medium">
                       <li class="my-2">
-                          <a href="https://flowbite.com/" class="hover:underline">Frequently Asked Questions (FAQ)</a>
+                          <a href="/faq" class="hover:underline">Frequently Asked Questions (FAQ)</a>
                       </li>
                       <li>
-                          <a href="https://tailwindcss.com/" class="hover:underline">Support</a>
+                          <a href="#" class="hover:underline">Support</a>
                       </li>
                     
                   </ul>
@@ -153,10 +153,10 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-gray-800">Links</h2>
                   <ul class="text-gray-500 dark:text-gray-800 font-medium">
                     <li class="my-2">
-                        <a href="https://tailwindcss.com/" class="hover:underline">Refund and Returns Policy</a>
+                        <a href="#" class="hover:underline">Refund and Returns Policy</a>
                     </li>
                     <li>
-                        <a href="https://tailwindcss.com/" class="hover:underline">Bank Accounts</a>
+                        <a href="/accounts" class="hover:underline">Bank Accounts</a>
                     </li>
                    
                   </ul>
