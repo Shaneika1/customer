@@ -6,7 +6,7 @@
 
     const logout = () => {
         localStorage.clear()
-        window.location.href = '/login'
+        window.location.href = '/authentications/login'
     }
 
     onMount(() => {
@@ -14,7 +14,7 @@
             loggedIn = true;
         }
     })
-    
+
 </script>
 
 <nav class="bg-white drop-shadow-2xl border-gray-200">
@@ -71,7 +71,7 @@
                 
                 <li>
                     <a
-                        href="#"
+                        href="/blogs"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Blog</a
                     >

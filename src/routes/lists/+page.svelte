@@ -340,6 +340,24 @@
                                         />
                                     </div>
 
+                                    
+                                    <div class="relative z-0 w-full mb-5 group">
+                                        <label
+                                            for="email"
+                                            class="block text-gray-700 text-sm font-bold mb-2"
+                                            >Quantity</label
+                                        >
+                                        <input
+                                            type="number"
+                                            bind:value={quantity}
+                                            name="floating_email"
+                                            id="floating_email"
+                                            class=" w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            placeholder=" "
+                                            required
+                                        />
+                                    </div>
+
                                     <button
                                         on:click={() => add()}
                                         class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

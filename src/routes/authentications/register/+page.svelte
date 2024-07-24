@@ -42,7 +42,7 @@
     <h1
     class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900  header"
 >
-   Login
+   Register
 </h1>
     <form >
         <div class="mb-4">
@@ -71,7 +71,7 @@
         </div>
         <div class="flex items-center justify-between">
             <button  on:click={() => registerUser()}  class=" confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Register</button>
-            <a href="/login" class="links inline-block align-baseline font-bold text-sm ">Already have an account? Click here?</a>
+            <a href="/authentications/login" class="links inline-block align-baseline font-bold text-sm ">Already have an account? Click here?</a>
         </div>
     </form>
 </div>

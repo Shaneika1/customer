@@ -26,7 +26,7 @@
     const addItem = () => {
         if (checkFields({ newItem, brand }) == true && quantity > 0) {
             let tempItems: Object[] = items;
-            tempItems.push({ product: newItem, quantity, brand });
+            tempItems.push({ name: newItem, quantity, brand });
             newItem = "";
             quantity = 1;
             brand = "";
