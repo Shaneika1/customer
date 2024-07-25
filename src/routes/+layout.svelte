@@ -95,6 +95,14 @@
                         >Lists</a
                     >
                 </li>
+
+                <li>
+                    <a
+                        href="/orders"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Orders</a
+                    >
+                </li>
                 
                 <li>
                     <a

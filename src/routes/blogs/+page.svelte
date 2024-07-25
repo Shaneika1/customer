@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import moment from 'moment'
+    import moment from "moment";
     import {
         getUser,
         generateRandomNumber,
@@ -14,22 +14,22 @@
     let item = "";
     let editing = false;
     let loading = false;
-    let section = 'blogs'
-    let curBlog = {}
+    let section = "blogs";
+    let curBlog = {};
 
     let user = {};
 
     const loadData = async () => {
-        loading = true
-        let data = await supabase.from('blogs').select()
-        blogs = data.data
-        loading = false
+        loading = true;
+        let data = await supabase.from("blogs").select();
+        blogs = data.data;
+        loading = false;
     };
 
     const selectBlog = (blog) => {
-        curBlog = blog
-        section = 'read'
-    }
+        curBlog = blog;
+        section = "read";
+    };
 
     onMount(() => {
         loadData();
@@ -49,42 +49,68 @@
             >
                 Read and Enjoy content on our blog section
             </p>
+
+            {#if blogs.length == 0}
+                <p
+                    class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                >
+                    No Blogs Available. Come back later
+                </p>
+            {/if}
         </div>
         <div
             class="mx-10 p-10"
             style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
         >
-                {#if section == 'blogs'}
-                    <div class='lg:grid lg:grid-cols-5'>
-                        {#each blogs as blog}
-                        <div style='cursor:pointer;' class='my-5 lg:my-1' on:click={() => selectBlog(blog)}>
+            {#if section == "blogs"}
+                <div class="lg:grid lg:grid-cols-5">
+                    {#each blogs as blog}
+                        <div
+                            style="cursor:pointer;"
+                            class="my-5 lg:my-1"
+                            on:click={() => selectBlog(blog)}
+                        >
                             <div>
-                                <h1 class='text-3xl font-normal'>{blog.title} <span class='text-xs text-gray-800'>By: {blog.by}</span> </h1>
-                                
-                                <small class='text-gray-600'>{moment(blog.created_at).format('MMMM Do YYYY, h:mm:ss a')}</small>
+                                <h1 class="text-3xl font-normal">
+                                    {blog.title}
+                                    <span class="text-xs text-gray-800"
+                                        >By: {blog.by}</span
+                                    >
+                                </h1>
 
+                                <small class="text-gray-600"
+                                    >{moment(blog.created_at).format(
+                                        "MMMM Do YYYY, h:mm:ss a",
+                                    )}</small
+                                >
                             </div>
-                            <div class='w-full py-3'>
-                                <img src={blog.image} style='width:300px; height:200px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;'/>
+                            <div class="w-full py-3">
+                                <img
+                                    src={blog.image}
+                                    style="width:300px; height:200px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+                                />
                             </div>
                         </div>
-                        {/each}
-                        
-                    </div>
-                {/if}
+                    {/each}
+                </div>
+            {/if}
 
-                {#if section == 'read'}
-                
-                    <div class='text-center  justify-content'>
-                        <h1 class='text-4xl font-bold my-5'>{curBlog.title}</h1>
-                        <p class='text-lg mb-5'>By: {curBlog.by}</p>
-                        <div class='w-100 ' style='display: flex; flex-direction: column; align-items: center;'>
-                            <img src={curBlog.image} style='width:700px; height:500px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;'/>
-                         </div>
-                         <p class='mt-4'>{curBlog.content}</p>  
+            {#if section == "read"}
+                <div class="text-center justify-content">
+                    <h1 class="text-4xl font-bold my-5">{curBlog.title}</h1>
+                    <p class="text-lg mb-5">By: {curBlog.by}</p>
+                    <div
+                        class="w-100"
+                        style="display: flex; flex-direction: column; align-items: center;"
+                    >
+                        <img
+                            src={curBlog.image}
+                            style="width:700px; height:500px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+                        />
                     </div>
-                {/if}
-
+                    <p class="mt-4">{curBlog.content}</p>
+                </div>
+            {/if}
         </div>
     </section>
 {/if}
