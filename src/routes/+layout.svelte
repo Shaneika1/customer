@@ -102,7 +102,7 @@
                     on:click={() => toggle()}
                         href="/lists"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
-                        >Lists</a
+                        >Grocery Lists</a
                     >
                 </li>
 
@@ -111,7 +111,7 @@
                     on:click={() => toggle()}
                         href="/orders"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
-                        >Orders</a
+                        >Order History</a
                     >
                 </li>
                 

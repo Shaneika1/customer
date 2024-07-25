@@ -37,7 +37,7 @@
                     style="background-color: #48c4c2;"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                 >
-                    Get started
+                    Order Groceries
                     <svg
                         class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                         aria-hidden="true"
@@ -106,12 +106,13 @@
         <div
             class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0"
         >
+        {#if valid == true}
             <a
-                href="#"
+                href="/lists"
                 style="background-color: #48c4c2;"
                 class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
-                Place Order
+             Order Groceries
                 <svg
                     class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                     aria-hidden="true"
@@ -128,6 +129,32 @@
                     />
                 </svg>
             </a>
+            {/if}
+
+            {#if valid == false}
+            <a
+                href="/authentications/login"
+                style="background-color: #48c4c2;"
+                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            >
+              Get Started
+                <svg
+                    class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                </svg>
+            </a>
+            {/if}
         </div>
     </div>
 </section>
@@ -216,7 +243,7 @@
 </section>
 
 <section class=" bg-center bg-no-repeat">
-    <div class="px-4 mx-auto text-center py-24 lg:py-10">
+    <div class="px-4 mx-auto text-center  lg:py-10">
         <h1
             class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
         >
@@ -257,7 +284,7 @@
                 <div class="top-block"></div>
                 <p class="discover mt-1">GROCERY DELIVERY</p>
                 <p class="nate-row-text">
-                    Explore a world of curated delights with our subscription box services. Immerse yourself in handpicked products delivered regularly for a delightful surprise each time.
+                    Enjoy hassle-free grocery delivery with personalized service, tailored to your needs. Create your grocery list and let us handle the rest.
                     <br />
                     {#if valid == true}
                     <a href="/lists">
@@ -312,7 +339,7 @@
     </div>
 </section>
 
-<section class="bg-white dark:bg-gray-900 vip hidden lg:block">
+<section class="bg-white dark:bg-gray-900 vip lg:block p-5">
     <div
         class="py-8 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16"
     >
