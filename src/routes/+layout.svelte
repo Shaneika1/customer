@@ -3,10 +3,15 @@
     import supabase from "../lib/supabase";
 
     let loggedIn:boolean = false;
+    let aria = false
 
     const logout = () => {
         localStorage.clear()
         window.location.href = '/authentications/login'
+    }
+
+    const toggle = () => {
+        aria = !aria
     }
 
     onMount(() => {
@@ -35,10 +40,11 @@
         </a>
         <button
             data-collapse-toggle="navbar-default"
+            on:click={() => toggle()}
             type="button"
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
-            aria-expanded="false"
+            aria-expanded={aria}
         >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -57,12 +63,13 @@
                 />
             </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div class={aria ? "hidden w-full md:block md:w-auto" : "w-full md:block md:w-auto"} id="navbar-default">
             <ul
                 class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
             >
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Home</a
@@ -71,6 +78,7 @@
                 
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/blogs"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Blog</a
@@ -79,6 +87,7 @@
                 {#if loggedIn == false}
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/guestOrder"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Order</a
@@ -90,6 +99,7 @@
 
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/lists"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Lists</a
@@ -98,6 +108,7 @@
 
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/orders"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Orders</a
@@ -106,8 +117,9 @@
                 
                 <li>
                     <a
+                    on:click={() => toggle()}
                         href="/profile"
-                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        class="block py-2 px-3 lg:mb-0 mb-4 text-dark rounded md:border-0 md:p-0"
                         >Profile</a
                     >
                 </li>
