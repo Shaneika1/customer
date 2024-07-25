@@ -116,10 +116,10 @@
     </div>
 
     <div
-        class="mx-10 p-10"
-        style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+        class="mx-1 p-10"
+        style=""
     >
-        <div class="lg:grid lg:grid-cols-2 text-left lg:px-24">
+        <div class="lg:grid lg:grid-cols-2 text-left lg:px-5">
             <div class="lg:my-5 my-10">
                 <div class="max-w-md mx-auto">
                     <div class="relative z-0 w-full mb-5 group">

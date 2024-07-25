@@ -59,8 +59,8 @@
             {/if}
         </div>
         <div
-            class="mx-10 p-10"
-            style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"
+            class="mx-1 p-1"
+            style=""
         >
             {#if section == "blogs"}
                 <div class="lg:grid lg:grid-cols-5">
