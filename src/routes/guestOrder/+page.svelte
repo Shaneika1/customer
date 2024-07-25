@@ -421,12 +421,30 @@
             <p
                 class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
-                Are you paying by card or by bank, or you want to go <button
+                Are you paying by bank, or you want to go <button
                     on:click={() => (section = "order")}
                     class="text-blue-400">back</button
                 >?
             </p>
-            <!-- <button
+            
+            <p class="text-2xl font-bold mb-5">Please we do bank transfers only!</p>
+            <div class="m-10">
+                <h2 class=" font-bold mb-2">Send Budgeted Amount:</h2>
+        
+                <p class="mb-2"> - Transfer the total budgeted amount to our corresponding bank account (e.g., Scotia to Scotia, JN to JN, CIBC to CIBC) to ensure same-day reflection.</p>
+                <p class='mb-2'> - 100% of the budget must be sent.</p>
+        
+                <p class="mb-2 font-bold mt-5">Upload Transfer Screenshot:</p>
+                <p class="mb-5"> - Once the transfer is complete, upload the screenshot on the order history page under the specific order you created.</p>
+        
+                <p class="mb-2 font-bold">Order Confirmation:</p>
+                <p class="mb-5"> - Your personal shopper will reach out to confirm your order once the payment has been verified.</p>
+
+                <p class="mb-2 font-bold">Refunds:</p>
+                <p class="mb-5"> - Any change from your spending will be transferred back to your account. This ensures a seamless and efficient process.</p>
+        
+            </div>
+               <!-- <button
                 type="button"
                 on:click={() => order("card")}
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"

@@ -22,6 +22,16 @@
         </div>
 
         <div class="">
+            <div class="col-span-6 border-2 p-5 my-3">
+                <p class="text-xl font-bold">Scotia Bank</p>
+                <p>Name: Errand Executer</p>
+                <p>Account Type: Savings</p>
+                <p>Account Number: 002094536151</p>
+                <p>Dominica Drive Branch</p>
+            </div>
+        </div>
+
+        <div class="">
             <div class="col-span-6 border-2  p-5 my-3">
                 <p class="text-xl font-bold">CIBC First Caribbean Bank</p>
                 <p>Name: Sheneika Davidson</p>

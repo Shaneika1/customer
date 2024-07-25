@@ -8,7 +8,7 @@
     <p
         class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
     >
-        Thank you for using our service. Our moderator will contact you via phone call shortly. You can view our bank accounts <a href='/accounts'>here</a> if you are planning to do a bank transfer.
+        Thank you for using our service. Our moderator will contact you via phone call shortly. You can view our bank accounts <a href='/accounts'>here</a>.
     </p>
 </div>
 </section>

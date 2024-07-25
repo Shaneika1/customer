@@ -188,7 +188,7 @@
                     address,
                     instructions,
                     day,
-                    customer:user.id,
+                    customer: user.id,
                     guest: false,
                     time,
                     budget,
@@ -252,22 +252,22 @@
             <h1
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
-            Your Personalized Grocery Lists
+                Your Personalized Grocery Lists
             </h1>
             <p
                 class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
-            Create and manage your customized grocery lists effortlessly
+                Create and manage your customized grocery lists effortlessly
             </p>
         </div>
-        <div
-            class="mx-1 p-10"
-            style=""
-        >
+        <div class="mx-1 p-10" style="">
             <div>
                 {#if section == "table"}
                     <button
-                        on:click={() => {section = "create"; editing = false;}}
+                        on:click={() => {
+                            section = "create";
+                            editing = false;
+                        }}
                         class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >Create List</button
                     >
@@ -340,7 +340,6 @@
                                         />
                                     </div>
 
-                                    
                                     <div class="relative z-0 w-full mb-5 group">
                                         <label
                                             for="email"
@@ -371,13 +370,13 @@
                                     ><br />
 
                                     {#if editing == true}
-                                    <button
-                                        on:click={() =>
-                                            (subSection = "orderDetails")}
-                                        style="background-color: #1391C8"
-                                        class="mt-6 confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                        >Create Order</button
-                                    >
+                                        <button
+                                            on:click={() =>
+                                                (subSection = "orderDetails")}
+                                            style="background-color: #1391C8"
+                                            class="mt-6 confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                            >Create Order</button
+                                        >
                                     {/if}
                                 </div>
                             {/if}
@@ -521,6 +520,10 @@
                                                 placeholder=" "
                                                 required
                                             />
+                                            <small
+                                                >Please note that delivery fee
+                                                is $5000</small
+                                            >
                                         </div>
 
                                         <div
@@ -581,64 +584,108 @@
                             {/if}
 
                             {#if subSection == "payment"}
-                            <div class="max-w-md mx-auto">
-                            <button
-                            on:click={() =>
-                                (subSection = "orderDetails")}
-                            class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            >Back</button
-                        >
-                                <section
-                                    class="guest-order-section bg-center bg-no-repeat"
-                                >
-                                    <div
-                                        class=""
+                                <div class="max-w-md mx-auto">
+                                    <button
+                                        on:click={() =>
+                                            (subSection = "orderDetails")}
+                                        class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        >Back</button
                                     >
-                                    
-                                        <p
-                                            class="mb-8  font-normal text-gray-700 lg:text-xl normal-text"
-                                        >
-                                            Are you paying by card or by bank transfer?
-                                        </p>
-                                        <!-- <button
+                                    <section
+                                        class="guest-order-section bg-center bg-no-repeat"
+                                    >
+                                        <div class="">
+                                            <p
+                                                class="mb-8 font-normal text-gray-700 lg:text-xl normal-text"
+                                            >
+                                                Are you paying by
+                                                bank transfer?
+                                            </p>
+                                            <!-- <button
                                             type="button"
                                             on:click={() => order("card")}
                                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                                             >By Card</button
                                         > -->
-                                        <button
-                                            type="button"
-                                            on:click={() => order("bank")}
-                                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                                            >By Bank Transfer</button
-                                        >
-                                    </div>
-                                </section>
-                            </div>
+
+                                            <p class="text-2xl font-bold mb-5">
+                                                Please we do bank transfers
+                                                only!
+                                            </p>
+                                            <div class="m-10">
+                                                <h2 class=" font-bold mb-2">
+                                                    Send Budgeted Amount:
+                                                </h2>
+
+                                                <p class="mb-2">
+                                                    - Transfer the total
+                                                    budgeted amount to our
+                                                    corresponding bank account
+                                                    (e.g., Scotia to Scotia, JN
+                                                    to JN, CIBC to CIBC) to
+                                                    ensure same-day reflection.
+                                                </p>
+                                                <p class="mb-2">
+                                                    - 100% of the budget must be
+                                                    sent.
+                                                </p>
+
+                                                <p class="mb-2 font-bold mt-5">
+                                                    Upload Transfer Screenshot:
+                                                </p>
+                                                <p class="mb-5">
+                                                    - Once the transfer is
+                                                    complete, upload the
+                                                    screenshot on the order
+                                                    history page under the
+                                                    specific order you created.
+                                                </p>
+
+                                                <p class="mb-2 font-bold">
+                                                    Order Confirmation:
+                                                </p>
+                                                <p class="mb-5">
+                                                    - Your personal shopper will
+                                                    reach out to confirm your
+                                                    order once the payment has
+                                                    been verified.
+                                                </p>
+
+                                                <p class="mb-2 font-bold">
+                                                    Refunds:
+                                                </p>
+                                                <p class="mb-5">
+                                                    - Any change from your
+                                                    spending will be transferred
+                                                    back to your account. This
+                                                    ensures a seamless and
+                                                    efficient process.
+                                                </p>
+                                            </div>
+
+                                            <button
+                                                type="button"
+                                                on:click={() => order("bank")}
+                                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                                >By Bank Transfer</button
+                                            >
+                                        </div>
+                                    </section>
+                                </div>
                             {/if}
                         </div>
 
                         <div>
-                            <table
-                                class="w-full "
-                            >
+                            <table class="w-full">
                                 <thead class="">
                                     <tr>
-                                        <th scope="col" >
-                                            Name
-                                        </th>
+                                        <th scope="col"> Name </th>
 
-                                        <th >
-                                            Brand
-                                        </th>
+                                        <th> Brand </th>
 
-                                        <th >
-                                            Quantity
-                                        </th>
+                                        <th> Quantity </th>
 
-                                        <th >
-                                            Action
-                                        </th>
+                                        <th> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
