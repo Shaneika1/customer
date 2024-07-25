@@ -155,7 +155,7 @@
 </section>
 
 <section class="lg:grid lg:grid-cols-2 h-100 py-24 lg:py-46">
-    <div class="mx-auto text-center lg:text-left">
+    <div class="mx-auto lg:mx-1 mx-5 text-center lg:text-left">
         <h1
             class="mb-4 text-4xl font-extrabold text-gray-900 md:text-5xl sm:px-16 lg:px-40 lg:text-6xl header"
         >

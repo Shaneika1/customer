@@ -40,7 +40,7 @@
 .column {
   flex: 1;
   padding: 10px;
-  min-height: 500px;
+  min-height: 400px;
   margin: 5px;
   text-align: center;
 }

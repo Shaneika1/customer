@@ -105,7 +105,7 @@
 
     {#if section == "driver"}
 
-                <div class="lg:my-5 my-10">
+                <div class="lg:my-5 my-10 lg:mx-10">
                     <button
                         on:click={() => section = 'table'}
                         class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
