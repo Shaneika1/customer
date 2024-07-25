@@ -22,7 +22,7 @@
 
 </script>
 
-<nav class="bg-white drop-shadow-2xl border-gray-200">
+<nav class="bg-white drop-shadow-2xl border-gray-200" >
     <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >
