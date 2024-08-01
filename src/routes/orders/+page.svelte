@@ -2,6 +2,8 @@
 
     import { onMount } from "svelte";
     import moment from "moment";
+    import {uploadImage} from '../../lib/index'
+
     import {
         getUser,
         generateRandomNumber,
@@ -32,6 +34,15 @@
                 orders = res.data;
             });
     };
+
+    const uploadInvoice = async (file, id) => {
+        let link = await uploadImage(file[0] , file[0].name) 
+        await supabase.from("orders").update({receipt: link}).eq('id', id).then(res => {
+            swal.fire('Great', 'Invoice Uploaded', 'success')
+        })
+
+        await loadInfo()
+    }
 
     const viewDriver = async (id) => {
         await supabase
@@ -80,6 +91,8 @@
                     <th>Status</th>
                     <th>Driver</th>
                     <th># of items</th>
+                    <th>Receipt</th>
+
                 </tr>
                 {#each orders as order}
                     <tr>
@@ -97,6 +110,13 @@
                                 </p>{/if}</td
                         >
                         <td>{order.items.length}</td>
+                        {#if order.receipt == null}
+                            <td><input type='file' on:input={(e) => uploadInvoice(e.target.files, order.id)}  /></td>
+                        {/if}
+
+                        {#if order.receipt != null}
+                        <td><a href={order.receipt}>View</a></td>
+                    {/if}
                     </tr>
                 {/each}
             </table>

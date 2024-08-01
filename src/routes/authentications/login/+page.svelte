@@ -96,7 +96,7 @@
 
             <div class="flex items-center justify-between">
                 <button
-                    on:click={() => signIn()}
+                    on:click={() => loginUser()}
                     class=" confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >Login</button
                 >
@@ -105,6 +105,8 @@
                     class="links inline-block align-baseline font-bold text-sm"
                     >Don't have an account? Click here?</a
                 >
+
+                
             </div>
 
             <div

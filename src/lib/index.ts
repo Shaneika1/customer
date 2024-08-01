@@ -7,6 +7,50 @@ export function generateRandomNumber(): number {
     return Math.random();
 }
 
+export function  randomizeAndRemoveSpaces(input: string): string {
+    // Regex to match common image file extensions
+  const extensionRegex = /\.(jpeg|jpg|png)$/i;
+  const match = input.match(extensionRegex);
+
+  let baseName = input;
+  let extension = '';
+
+  if (match) {
+    // Extract the extension
+    extension = match[0];
+    // Remove the extension from the base name
+    baseName = input.slice(0, -extension.length);
+  }
+
+  // Remove all spaces from the base name
+  const noSpaces = baseName.replace(/\s+/g, '');
+
+  // Convert the string to an array of characters
+  const charArray = noSpaces.split('');
+
+  // Shuffle the array of characters using Fisher-Yates algorithm
+  for (let i = charArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [charArray[i], charArray[j]] = [charArray[j], charArray[i]];
+  }
+
+  // Join the shuffled characters back into a string
+  const randomizedName = charArray.join('');
+
+  // Append the extension if it exists
+  return randomizedName + extension;
+
+}
+
+export async function uploadImage(file:any, name:string): Promise<any> {
+    let {data, error} = await supabase.storage.from('images').upload(`/${randomizeAndRemoveSpaces(name)}`, file, {
+        cacheControl: '3600',
+        upsert: false
+    })
+    console.log(error)
+    return `https://vqhobmiymmgdiwcsytdn.supabase.co/storage/v1/object/public/${data?.fullPath}`
+}
+
 export async function checkLogin() { 
     let token = localStorage.getItem('token');
     let data = await supabase.from('customers').select().eq('token', token)
