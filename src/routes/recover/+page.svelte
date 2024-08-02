@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import {sendEmail} from '$lib/index'
+    // import {sendEmail} from '$lib/index'
     import swal from 'sweetalert2';
 
     let email:string = ''
