@@ -1,4 +1,4 @@
-<script lant='ts'>
+<script lang='ts'>
     import {sendEmail} from '$lib/index'
     import swal from 'sweetalert2';
 
