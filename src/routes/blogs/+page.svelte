@@ -59,7 +59,7 @@
             {/if}
         </div>
         <div
-            class="mx-1 p-1"
+            class="mx-1 p-20"
             style=""
         >
             {#if section == "blogs"}
