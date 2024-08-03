@@ -17,6 +17,7 @@
     let loading = false;
     let section = "blogs";
     let curBlog = {};
+    let subscribed = false;
 
     let user = {};
 
@@ -24,12 +25,17 @@
         loading = true;
         let data = await supabase.from("blogs").select();
         blogs = data.data;
+        user = await getUser(localStorage.getItem("token"));
+        if(user.vip && user.vip.status == 'active') {
+            subscribed = true;
+        }
         loading = false;
+        
     };
 
     const subscribe = async (value, type) => {
         loading = true
-        let user = await getUser(localStorage.getItem("token"));
+        
         let orderId = await generateSubId();
         const params = new URLSearchParams();
             params.append("account_number", "2656269605");
@@ -163,6 +169,8 @@
                         your time for what truly matters with our VIP Gold
                         package.
                     </p>
+                
+                    {#if subscribed == false}
                     <button
                                             style="background-color:#e4c817; color:black;"
                                             on:click={() =>
@@ -170,6 +178,16 @@
                                             class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                             >Subscribe to our gold package</button
                                         >
+                                        {/if}
+
+                                        {#if subscribed == true}
+                                        <button
+                                                                style="background-color:#e4c817; color:black;"
+                                                                
+                                                                class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                                                >You are already subscribed</button
+                                                            >
+                                                            {/if}
                 </div>
 
                 <div class="container py-5">
@@ -226,12 +244,21 @@
                         preferences. Additionally, members enjoy the flexibility to tailor
                         services based on their individual requirements.
                       </p>
+                      {#if subscribed == false}
                       <button
                       on:click={() =>
                           subscribe(7000, 'Platinum')}
                       class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                       >Subscribe to our platinum package</button
                   >
+                  {/if}
+                  {#if subscribed == true}
+                  <button
+                  
+                  class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  >You are already subscribed</button
+              >
+              {/if}
                     </div>
                 
                 </div>
