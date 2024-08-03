@@ -96,7 +96,7 @@
             {/if}
 
             {#if section == "read"}
-                <div class="lg:text-center lg:justify-content">
+                <div class="lg:text-center lg:justify-content mb-20">
                     <h1 class="lg:text-4xl text-xl font-bold my-5">{curBlog.title}</h1>
                     
                     <p class="text-lg mb-5">By: {curBlog.by}</p>

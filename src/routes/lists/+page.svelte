@@ -23,6 +23,7 @@
     let curAddress = "";
 
     let addresses = [];
+    let selectedItems = [];
 
     var email: string = "";
     var firstname: string = "";
@@ -38,6 +39,17 @@
 
     let user = {};
 
+    const selectItems = (val, id) => {
+        let temp = selectedItems;
+        if(val == false) {
+            temp.splice(id, 1)
+        } else {
+            temp.push(items[id])
+        }
+        selectedItems = temp
+        console.log(selectedItems)
+    }
+
     const loadData = async () => {
         user = await getUser(localStorage.getItem("token"));
         firstname = user.firstname;
@@ -49,6 +61,7 @@
         let data = await supabase.from("lists").select().eq("user", user.id);
         console.log(data.error);
         lists = data.data;
+        selectedItems = lists.items
 
         //get addresses
         let data2 = await supabase
@@ -108,6 +121,7 @@
         editing = true;
         name = list.name;
         items = list.items;
+        selectedItems = list.items;
         section = "create";
         currentListId = list.id;
     };
@@ -128,7 +142,7 @@
             } else {
                 await supabase
                     .from("lists")
-                    .update({ name, items, user: user.id })
+                    .update({ name, items:selectItems, user: user.id })
                     .eq("id", currentListId)
                     .then((res) => {
                         swal.fire("Success", "List has been Saved", "success");
@@ -711,6 +725,8 @@
                             <table class="w-full">
                                 <thead class="">
                                     <tr>
+
+                                        <th scope="col">  </th>
                                         <th scope="col"> Name </th>
 
                                         <th> Brand </th>
@@ -723,6 +739,11 @@
                                 <tbody>
                                     {#each items as item, index}
                                         <tr class="bg-white border-b">
+                                            <td
+                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                                        >
+                                            <input type='checkbox' checked on:change={(e) => selectItems(e.target.checked, index)} />
+                                        </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
