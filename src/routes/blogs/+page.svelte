@@ -71,13 +71,13 @@
                             on:click={() => selectBlog(blog)}
                         >
                             <div>
-                                <h1 class="lg:text-3xl text-xl font-normal">
+                                <h1 class="lg:text-xl text-xl font-normal">
                                     {blog.title}
-                                    <span class="text-xs text-gray-800"
-                                        >By: {blog.by}</span
-                                    >
+                                    
                                 </h1>
-
+                                <span class="text-xs text-gray-800"
+                                >By: {blog.by}</span
+                            ><br/>
                                 <small class="text-gray-600"
                                     >{moment(blog.created_at).format(
                                         "MMMM Do YYYY, h:mm:ss a",
@@ -98,6 +98,7 @@
             {#if section == "read"}
                 <div class="lg:text-center lg:justify-content">
                     <h1 class="lg:text-4xl text-xl font-bold my-5">{curBlog.title}</h1>
+                    
                     <p class="text-lg mb-5">By: {curBlog.by}</p>
                     <div
                         class="w-100"
