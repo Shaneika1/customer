@@ -83,6 +83,22 @@ export async function generateOrderId(): Promise<number> {
     return orderId;
 }
 
+export async function generateSubId(): Promise<number> {
+    let Id:number = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
+ 
+    while(true) {
+        let data = await supabase.from('customers').select().eq('subId', Id)
+        if(data.data?.length == 0) {
+            break
+        } 
+
+        Id = Math.floor(Math.random() * (10000 - 100 + 1)) + 100;
+
+    }
+
+    return Id;
+}
+
 export async function checkEmail (email:string): Promise<boolean>  {
     let data = await supabase.from("users").select().eq("email", email)
     if (data.data.length > 0) {

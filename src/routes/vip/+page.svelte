@@ -1,10 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import axios from "axios"
     import moment from "moment";
     import {
         getUser,
         generateRandomNumber,
-        generateOrderId,
+        generateSubId,
         checkFields,
     } from "$lib/index";
     import supabase from "$lib/supabase";
@@ -25,6 +26,62 @@
         blogs = data.data;
         loading = false;
     };
+
+    const subscribe = async (value, type) => {
+        loading = true
+        let user = await getUser(localStorage.getItem("token"));
+        let orderId = await generateSubId();
+        const params = new URLSearchParams();
+            params.append("account_number", "2656269605");
+            params.append("country_code", "JM");
+            params.append("currency", "JMD");
+            params.append("avs", "0");
+            params.append("data", '{"a":"b"}');
+            params.append("environment", "sandbox");
+            params.append("fee_structure", "customer_pay");
+            params.append("method", "credit_card");
+            params.append("order_id", orderId.toString());
+            params.append("origin", orderId.toString());
+            params.append(
+                "response_url",
+                `https://errandexecuter.com/orderComplete`,
+            );
+            params.append("total", parseInt(value.toString()).toFixed(2));
+
+            // Make the POST request using axios with URLSearchParams
+            await axios
+                .post(
+                    "https://jm.wipayfinancial.com/plugins/payments/request",
+                    params,
+                    {
+                        headers: {
+                            Accept: "application/json",
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                    },
+                )
+                .then(async (result) => {
+                    console.log(result.data.url);
+                    let currentTime = moment()
+                    let vipObj = {
+                        from: currentTime.format(),
+                        to: currentTime.add(1, 'month').format(),
+                        type,
+                        status: 'Pending'
+                    }
+
+                    await supabase.from('customers').update({vip: vipObj, subId: orderId}).eq('id', user.id).then(res => {
+                        loading = false
+                        window.location.href = result.data.url;
+                    })
+                   
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+
+                loading = false
+    }
 
     const selectBlog = (blog) => {
         curBlog = blog;
@@ -106,6 +163,13 @@
                         your time for what truly matters with our VIP Gold
                         package.
                     </p>
+                    <button
+                                            style="background-color:#e4c817; color:black;"
+                                            on:click={() =>
+                                                subscribe(4000, 'gold')}
+                                            class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                            >Subscribe to our gold package</button
+                                        >
                 </div>
 
                 <div class="container py-5">
