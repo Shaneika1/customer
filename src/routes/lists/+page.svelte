@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import axios from "axios";
     import {
         getUser,
         generateRandomNumber,
@@ -111,6 +112,8 @@
         currentListId = list.id;
     };
 
+    const makePayment = async () => {};
+
     const saveList = async () => {
         if (name.length > 0 && items.length > 0) {
             if (editing == false) {
@@ -206,7 +209,23 @@
                     });
                 });
         } else {
-            const params = new URLSearchParams();
+            await supabase.from("orders").insert({
+                email,
+                firstname,
+                lastname,
+                phone,
+                address,
+                instructions,
+                day,
+                customer: user.id,
+                guest: false,
+                time,
+                budget,
+                items,
+                status: "Waiting for payment By Card",
+                orderId,
+            }).then(async (res) => {
+                const params = new URLSearchParams();
             params.append("account_number", "2656269605");
             params.append("country_code", "JM");
             params.append("currency", "JMD");
@@ -221,9 +240,10 @@
                 "response_url",
                 `https://errandexecuter.com/orderComplete`,
             );
-            params.append("total", budget.toString());
+            params.append("total", parseInt(budget.toString()).toFixed(2));
 
-            axios
+            // Make the POST request using axios with URLSearchParams
+            await axios
                 .post(
                     "https://jm.wipayfinancial.com/plugins/payments/request",
                     params,
@@ -237,7 +257,13 @@
                 .then((result) => {
                     console.log(result.data.url);
                     window.location.href = result.data.url;
+                })
+                .catch((err) => {
+                    console.error(err);
                 });
+            });
+
+            
         }
     };
 
@@ -598,8 +624,7 @@
                                             <p
                                                 class="mb-8 font-normal text-gray-700 lg:text-xl normal-text"
                                             >
-                                                Are you paying by
-                                                bank transfer?
+                                                Are you paying by bank transfer?
                                             </p>
                                             <!-- <button
                                             type="button"
@@ -668,6 +693,13 @@
                                                 on:click={() => order("bank")}
                                                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                                                 >By Bank Transfer</button
+                                            >
+
+                                            <button
+                                                type="button"
+                                                on:click={() => order("card")}
+                                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                                >By Card</button
                                             >
                                         </div>
                                     </section>
