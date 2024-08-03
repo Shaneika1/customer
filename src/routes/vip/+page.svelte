@@ -55,6 +55,9 @@
             </p>
         </div>
         <div class="mx-1 px-10 lg:grid lg:grid-cols-4" style="">
+            <div class="image-div block lg:hidden col-span-2  py-5">
+                <img src="/2.png" style='width:100%;' alt="Descriptive Alt Text" class="row-image" />
+              </div>
             <div class=" col-span-2">
                 <div class=" ">
                     <h3
@@ -165,7 +168,7 @@
                 </div>
             </div>
 
-            <div class="image-div col-span-2 px-20">
+            <div class="image-div hidden lg:block col-span-2 px-20">
                 <img src="/2.png" style='width:100%;' alt="Descriptive Alt Text" class="row-image" />
               </div>
         </div>
