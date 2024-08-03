@@ -114,6 +114,15 @@
                         >Order History</a
                     >
                 </li>
+
+                <li>
+                    <a
+                    on:click={() => toggle()}
+                        href="/vip"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Vip Club</a
+                    >
+                </li>
                 
                 <li>
                     <a

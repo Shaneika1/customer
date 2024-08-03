@@ -59,7 +59,7 @@
             {/if}
         </div>
         <div
-            class="mx-1 p-20"
+            class="mx-1 lg:p-20 ml-6"
             style=""
         >
             {#if section == "blogs"}
@@ -71,7 +71,7 @@
                             on:click={() => selectBlog(blog)}
                         >
                             <div>
-                                <h1 class="text-3xl font-normal">
+                                <h1 class="lg:text-3xl text-xl font-normal">
                                     {blog.title}
                                     <span class="text-xs text-gray-800"
                                         >By: {blog.by}</span
@@ -96,8 +96,8 @@
             {/if}
 
             {#if section == "read"}
-                <div class="text-center justify-content">
-                    <h1 class="text-4xl font-bold my-5">{curBlog.title}</h1>
+                <div class="lg:text-center lg:justify-content">
+                    <h1 class="lg:text-4xl text-xl font-bold my-5">{curBlog.title}</h1>
                     <p class="text-lg mb-5">By: {curBlog.by}</p>
                     <div
                         class="w-100"
