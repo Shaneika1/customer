@@ -123,7 +123,7 @@
                     >
                         The Gold Package
                     </h3>
-                    <p class="jumbo-text mb-3">
+                    <p class=" mb-3 text-lg">
                         Introducing our VIP Gold package, your gateway to a life
                         of unprecedented convenience and luxury. With this
                         membership, you gain exclusive access to a dedicated
@@ -166,7 +166,7 @@
                     <button
                                             style="background-color:#e4c817; color:black;"
                                             on:click={() =>
-                                                subscribe(4000, 'gold')}
+                                                subscribe(4000, 'Gold')}
                                             class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                             >Subscribe to our gold package</button
                                         >
@@ -180,7 +180,7 @@
                       >
                         The Platinum Package
                       </h3>
-                      <p class="jumbo-text mb-3">
+                      <p class="jumbo-text mb-3 text-lg">
                         Introducing our exquisite Platinum membership, tailored for those who
                         demand the absolute pinnacle of convenience, luxury, and exclusive
                         services.
@@ -226,7 +226,12 @@
                         preferences. Additionally, members enjoy the flexibility to tailor
                         services based on their individual requirements.
                       </p>
-              
+                      <button
+                      on:click={() =>
+                          subscribe(7000, 'Platinum')}
+                      class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      >Subscribe to our platinum package</button
+                  >
                     </div>
                 
                 </div>
