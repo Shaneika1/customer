@@ -44,7 +44,7 @@
             params.append("origin", orderId.toString());
             params.append(
                 "response_url",
-                `https://errandexecuter.com/orderComplete`,
+                `https://errandexecuter.com/vipComplete`,
             );
             params.append("total", parseInt(value.toString()).toFixed(2));
 
