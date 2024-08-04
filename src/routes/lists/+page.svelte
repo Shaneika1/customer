@@ -377,7 +377,7 @@
                                         <label
                                             for="email"
                                             class="block text-gray-700 text-sm font-bold mb-2"
-                                            >Enter item name</label
+                                            >Enter Item Name. Please Specify Size of Item</label
                                         >
                                         <input
                                             type="text"
