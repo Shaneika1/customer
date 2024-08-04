@@ -117,6 +117,19 @@
         quantity = 1;
     };
 
+    const clear2 = () => {
+        item = "";
+        brand = "";
+        quantity = 1;
+        time = ''
+        day = ''
+        time = ''
+        address = ''
+        budget = 0
+        items = []
+        selectedItems = []
+    };
+
     const editList = (list) => {
         editing = true;
         name = list.name;
@@ -319,7 +332,7 @@
             <h3
                 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
-                Your Personalized Grocery Lists
+                Your Personalized {#if subSection == 'items'}Grocery{/if} {#if subSection != 'items' }Finalize{/if}Lists
             </h3>
             <p
                 class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
@@ -334,6 +347,7 @@
                         on:click={() => {
                             section = "create";
                             editing = false;
+                            clear2()
                         }}
                         class=" confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >Create List</button
@@ -586,8 +600,7 @@
                                                 required
                                             />
                                             <small
-                                                >Please note that delivery fee
-                                                is $5000</small
+                                                >Service charge of $5000 will be deducted from your budget</small
                                             >
                                         </div>
 
