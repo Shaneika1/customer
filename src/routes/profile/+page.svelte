@@ -113,7 +113,7 @@
             Profile
         </h3>
         <p
-            class="mb-8 text-lg lg:text-center text-left font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+            class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
         >
             View your profile settings and orders here
         </p>

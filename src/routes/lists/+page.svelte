@@ -295,7 +295,7 @@
                 Your Personalized Grocery Lists
             </h3>
             <p
-                class="mb-8 text-lg text-left lg:text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
                 Create and manage your customized grocery lists effortlessly
             </p>

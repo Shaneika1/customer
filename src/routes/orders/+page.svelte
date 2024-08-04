@@ -70,7 +70,7 @@
                 {section == 'table' ? 'Orders' : 'Meet Your Personal Shopper'}
             </h3>
             <p
-                class="mb-8 text-lg font-normal lg:text-center text-left text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                class="mb-8 text-lg font-normal text-center text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
                {section == 'table' ? 'View your current and previous orders here' : 'They will be your assistant for today'}
             </p>

@@ -108,7 +108,7 @@
                 Elevate Your Lifestyle with Our VIP Club
             </h3>
             <p
-                class="mb-8 text-lg lg:text-center text-left font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
                 Welcome to the Errand Executer VIP Club, where exclusivity meets
                 unparalleled convenience. For just $30,000 every three months,
