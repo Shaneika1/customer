@@ -129,6 +129,7 @@
     const makePayment = async () => {};
 
     const saveList = async () => {
+        console.log(items)
         if (name.length > 0 && items.length > 0) {
             if (editing == false) {
                 await supabase
@@ -142,7 +143,7 @@
             } else {
                 await supabase
                     .from("lists")
-                    .update({ name, items:selectItems, user: user.id })
+                    .update({ name, items, user: user.id })
                     .eq("id", currentListId)
                     .then((res) => {
                         swal.fire("Success", "List has been Saved", "success");
@@ -192,6 +193,32 @@
         }
     };
 
+    const changeName = (value, index) => {
+        let tempList = items;
+        let name = value
+        tempList[index].name = name
+        items = tempList
+        selectedItems = tempList
+        console.log(tempList)
+        console.log(items)
+    }
+
+    const changeBrand = (value, index) => {
+        let tempList = items;
+        let brand = value
+        tempList[index].brand = brand
+        items = tempList
+        selectedItems = tempList
+    }
+
+    const changeQuantity = (value, index) => {
+        let tempList = items;
+        let quantity = value
+        tempList[index].quantity = quantity
+        items = tempList
+        selectedItems = tempList
+    }
+
     const order = async (paymentType: string) => {
         let orderId = await generateOrderId();
         if (paymentType == "bank") {
@@ -209,7 +236,7 @@
                     guest: false,
                     time,
                     budget,
-                    items,
+                    items:selectItems,
                     status: "Waiting for payment",
                     orderId,
                 })
@@ -235,7 +262,7 @@
                 guest: false,
                 time,
                 budget,
-                items,
+                items:selectItems,
                 status: "Waiting for payment By Card",
                 orderId,
             }).then(async (res) => {
@@ -367,7 +394,7 @@
                                         <label
                                             for="email"
                                             class="block text-gray-700 text-sm font-bold mb-2"
-                                            >Brand</label
+                                            >Brand (Optional)</label
                                         >
                                         <input
                                             type="text"
@@ -747,17 +774,17 @@
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                                {item.name}
+                                             <input value={item.name} style='border:none;' on:change={(e) => changeName(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                                {item.brand}
+                                            <input value={item.brand} style='border:none;' on:change={(e) => changeBrand(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900"
                                             >
-                                                {item.quantity}
+                                            <input type='number' value={item.quantity} style='border:none;' on:change={(e) => changeQuantity(e.target.value, index)} />
                                             </td>
                                             <td
                                                 on:click={() =>
