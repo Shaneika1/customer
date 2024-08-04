@@ -147,7 +147,7 @@
                     .eq("id", currentListId)
                     .then((res) => {
                         swal.fire("Success", "List has been Saved", "success");
-                        section = "table";
+                        // section = "table";
                         clear();
                     });
             }
@@ -886,7 +886,7 @@
             {/if}
         </div>
 
-        <div class='mt-40'>
+        <div class='mt-40 p-40'>
 
         </div>
     </section>
