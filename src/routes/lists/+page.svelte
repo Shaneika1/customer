@@ -748,8 +748,10 @@
                             {/if}
                         </div>
 
-                        <div>
-                            <table class="w-full">
+                        <div class='w-full overflow-x-scroll'>
+                            <p class='my-1 font-bold'>Click on an item on the table to edit</p>
+
+                            <table class="">
                                 <thead class="">
                                     <tr>
 
@@ -774,17 +776,17 @@
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                             <input value={item.name} style='border:none;' on:change={(e) => changeName(e.target.value, index)} />
+                                             <input value={item.name} style='border:none; background:none;' on:change={(e) => changeName(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                            <input value={item.brand} style='border:none;' on:change={(e) => changeBrand(e.target.value, index)} />
+                                            <input value={item.brand} style='border:none;  background:none;' on:change={(e) => changeBrand(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900"
                                             >
-                                            <input type='number' value={item.quantity} style='border:none;' on:change={(e) => changeQuantity(e.target.value, index)} />
+                                            <input type='number' value={item.quantity} style='border:none;  background:none;' on:change={(e) => changeQuantity(e.target.value, index)} />
                                             </td>
                                             <td
                                                 on:click={() =>
