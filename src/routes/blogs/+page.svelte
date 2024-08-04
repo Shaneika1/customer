@@ -71,10 +71,10 @@
                             on:click={() => selectBlog(blog)}
                         >
                             <div>
-                                <h1 class="lg:text-xl text-xl font-normal">
+                                <p class="lg:text-xl text-xl font-normal">
                                     {blog.title}
                                     
-                                </h1>
+                                </p>
                                 <span class="text-xs text-gray-800"
                                 >By: {blog.by}</span
                             ><br/>
