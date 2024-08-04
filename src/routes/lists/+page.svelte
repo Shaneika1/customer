@@ -290,12 +290,12 @@
     <section class="guest-order-section bg-center bg-no-repeat">
         <div class="px-4 mx-auto text-center pt-10 lg:py-16">
             <h3
-                class="mb-4 text-xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
+                class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
                 Your Personalized Grocery Lists
             </h3>
             <p
-                class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                class="mb-8 text-lg text-left lg:text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
                 Create and manage your customized grocery lists effortlessly
             </p>
@@ -308,7 +308,7 @@
                             section = "create";
                             editing = false;
                         }}
-                        class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        class=" confirm-buttons mb-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >Create List</button
                     >
                 {/if}
@@ -780,7 +780,7 @@
                 <div class="lg:grid lg:grid-cols-4">
                     {#each lists as list}
                         <div
-                            class="m-y cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
+                            class="my-10 lg:mx-5 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
                         >
                             <div class="p-4">
                                 <!-- Card content goes here -->

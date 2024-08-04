@@ -40,12 +40,12 @@
     <section class="guest-order-section bg-center bg-no-repeat">
         <div class="px-4 mx-auto text-center pt-10 lg:py-16">
             <h3
-                class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900  lg:text-6xl header"
+                class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 xl lg:text-6xl header"
             >
                 Blogs
             </h3>
             <p
-                class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
+                class="mb-8 text-lg  lg:text-center text-left  font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
             >
                 Read and Enjoy content on our blog section
             </p>
