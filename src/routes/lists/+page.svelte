@@ -300,7 +300,7 @@
                 Create and manage your customized grocery lists effortlessly
             </p>
         </div>
-        <div class="mx-1 p-10" style="">
+        <div class="mx-1 p-2 lg:p-10" style="">
             <div>
                 {#if section == "table"}
                     <button
