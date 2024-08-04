@@ -109,6 +109,15 @@
                 <li>
                     <a
                     on:click={() => toggle()}
+                        href="/addresses"
+                        class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
+                        >Addresses</a
+                    >
+                </li>
+
+                <li>
+                    <a
+                    on:click={() => toggle()}
                         href="/orders"
                         class="block py-2 px-3 text-dark rounded md:border-0 md:p-0"
                         >Order History</a

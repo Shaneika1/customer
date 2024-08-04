@@ -344,7 +344,7 @@
                     <button
                         on:click={() => (section = "table")}
                         class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        >Back</button
+                        >Back to lists</button
                     >
                 {/if}
             </div>
@@ -545,15 +545,13 @@
                                                     class="block text-gray-700 text-sm font-bold mb-2"
                                                     >Address</label
                                                 >
-                                                <input
-                                                    type="text"
-                                                    bind:value={address}
-                                                    name="floating_first_name"
-                                                    id="floating_first_name"
-                                                    class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                                    placeholder=" "
-                                                    required
-                                                />
+                                                <select class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  bind:value={address}>
+                                                    <option>{#if addresses.length > 0}Select Address{/if} {#if addresses.length == 0}You have no addresses, please add an address in the address section {/if}</option>
+                                                    {#each addresses as add}
+                                                        <option value={add.address}>{add.address}</option>
+                                                    {/each}
+                                                </select>
+                                                
                                             </div>
                                         </div>
                                         <div
@@ -754,7 +752,6 @@
                             <table class="">
                                 <thead class="">
                                     <tr>
-
                                         <th scope="col">  </th>
                                         <th scope="col"> Name </th>
 
