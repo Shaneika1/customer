@@ -776,12 +776,12 @@
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                             <input value={item.name} style='border:none; background:none;' on:change={(e) => changeName(e.target.value, index)} />
+                                             <input value={item.name.charAt(0).toUpperCase() + item.name.slice(1) } style='border:none; background:none;' on:change={(e) => changeName(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                            <input value={item.brand} style='border:none;  background:none;' on:change={(e) => changeBrand(e.target.value, index)} />
+                                            <input value={item.brand.charAt(0).toUpperCase() + item.brand.slice(1) } style='border:none;  background:none;' on:change={(e) => changeBrand(e.target.value, index)} />
                                             </td>
                                             <td
                                                 class="px-6 py-4 font-medium text-gray-900"
