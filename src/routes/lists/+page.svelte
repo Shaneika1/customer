@@ -332,7 +332,7 @@
             <h3
                 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
-                Your Personalized {#if subSection == 'items'}Grocery{/if} {#if subSection != 'items' }Finalized {/if}Lists
+                Your  {#if subSection == 'items'}Personalized{/if} {#if subSection != 'items' }Finalized {/if} Grocery Lists
             </h3>
             <p
                 class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
