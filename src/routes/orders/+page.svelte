@@ -82,7 +82,7 @@
     >
         {#if section == "table"}
         <div class="lg:my-5 my-10 w-full overflow-x-auto">
-            <h1 class="text-2xl mb-2">Previous Orders</h1>
+            <h3 class="text-2xl mb-2">Previous Orders</h3>
             <table>
                 <tr>
                     <th>Order Id</th>
