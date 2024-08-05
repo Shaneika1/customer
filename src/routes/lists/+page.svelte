@@ -332,7 +332,7 @@
             <h3
                 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
-                Your {#if subSection == 'items'}Personalized{/if} {#if subSection != 'items' }Finalized{/if} Grocery Lists
+                Your Personalized  Grocery Lists
             </h3>
             <p
                 class="mb-8 text-lg text-center font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"
@@ -686,41 +686,28 @@
                                         > -->
 
                                             <p class="text-2xl font-bold mb-5">
-                                                Please we do bank transfers
-                                                only!
+                                                You're almost there
                                             </p>
                                             <div class="m-10">
-                                                <h2 class=" font-bold mb-2">
-                                                    Send Budgeted Amount:
-                                                </h2>
+                                                
 
                                                 <p class="mb-2">
-                                                    - Transfer the total
+                                                    <span class='font-bold'>Step 1</span> - Transfer the total
                                                     budgeted amount to our
                                                     corresponding bank account
                                                     (e.g., Scotia to Scotia, JN
                                                     to JN, CIBC to CIBC) to
-                                                    ensure same-day reflection.
-                                                </p>
-                                                <p class="mb-2">
-                                                    - 100% of the budget must be
-                                                    sent.
+                                                    ensure same-day reflection or pay by card
                                                 </p>
 
-                                                <p class="mb-2 font-bold mt-5">
-                                                    Upload Transfer Screenshot:
+                                                <p class="mb-2">
+                                                    <span class='font-bold'>Step 2</span> - Upload the transfer screenshot on the order history page under your specific order.
                                                 </p>
                                                 <p class="mb-5">
-                                                    - Once the transfer is
-                                                    complete, upload the
-                                                    screenshot on the order
-                                                    history page under the
-                                                    specific order you created.
+                                                    <span class='font-bold'>Step 3</span> - Your personal shopper will confirm your order once the payment is verified. Please check your order History page for updates.
                                                 </p>
 
-                                                <p class="mb-2 font-bold">
-                                                    Order Confirmation:
-                                                </p>
+                                                
                                                 <p class="mb-5">
                                                     - Your personal shopper will
                                                     reach out to confirm your
@@ -732,27 +719,26 @@
                                                     Refunds:
                                                 </p>
                                                 <p class="mb-5">
-                                                    - Any change from your
-                                                    spending will be transferred
-                                                    back to your account. This
-                                                    ensures a seamless and
-                                                    efficient process.
+                                                    - Any remaining balance will be refunded.
+
                                                 </p>
+
+                                                <p class="mb-5">This ensures a smooth and efficient grocery order process.</p>
                                             </div>
 
                                             <button
                                                 type="button"
                                                 on:click={() => order("bank")}
                                                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                                                >By Bank Transfer</button
+                                                >Complete Order Process</button
                                             >
 
-                                            <button
+                                            <!-- <button
                                                 type="button"
                                                 on:click={() => order("card")}
                                                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                                                 >By Card</button
-                                            >
+                                            > -->
                                         </div>
                                     </section>
                                 </div>
@@ -760,8 +746,10 @@
                         </div>
 
                         <div class='w-full overflow-x-scroll'>
-                            <p class='my-1 font-bold'>Click on an item on the table to edit</p>
-
+                            
+                            <p class='my-1 font-bold'></p>
+                            <p class='my-1 font-bold text-lg'>Your Finalized Grocery List</p>
+                            {#if subSection != 'payment'}<p class='my-1 font-bold'>Click on an item on the table to edit</p>{/if}
                             <table class="">
                                 <thead class="">
                                     <tr>
