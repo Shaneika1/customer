@@ -32,6 +32,7 @@
             .eq("email", curUser.email)
             .then((res) => {
                 orders = res.data;
+                console.log(orders)
             });
     };
 
@@ -83,7 +84,7 @@
         {#if section == "table"}
         <div class="lg:my-5 my-10 w-full overflow-x-auto">
             <h3 class="text-2xl mb-2">Previous Orders</h3>
-            <table>
+            <table class="lg:my-5 my-10 w-full">
                 <tr>
                     <th>Order Id</th>
                     <th>Delivery Day</th>
@@ -109,7 +110,7 @@
                                     {order.driver}
                                 </p>{/if}</td
                         >
-                        <td>{order.items.length}</td>
+                        <td>{order.items ? order.items.length : 0}</td>
                         {#if order.receipt == null}
                             <td><input type='file' on:input={(e) => uploadInvoice(e.target.files, order.id)}  /></td>
                         {/if}

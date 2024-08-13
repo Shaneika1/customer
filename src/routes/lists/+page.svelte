@@ -259,7 +259,7 @@
                         "Order has been placed",
                         "success",
                     ).then((res) => {
-                        window.location.href = "/guestSuccess";
+                        window.location.href = "/orderComplete";
                     });
                 });
         } else {
@@ -329,6 +329,7 @@
 {#if loading == false}
     <section class="guest-order-section bg-center bg-no-repeat">
         <div class="px-4 mx-auto text-center pt-10 lg:py-16">
+            {#if subSection != "payment"}
             <h3
                 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
@@ -339,6 +340,7 @@
             >
                 Create and manage your customized grocery lists effortlessly
             </p>
+            {/if}
         </div>
         <div class="mx-1 p-2 lg:p-10" style="">
             <div>
@@ -355,11 +357,13 @@
                 {/if}
 
                 {#if section == "create"}
+                    {#if subSection != "payment"}
                     <button
                         on:click={() => (section = "table")}
                         class=" confirm-buttons mb-5 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >Back to lists</button
                     >
+                    {/if}
                 {/if}
             </div>
             {#if section == "create"}
@@ -663,12 +667,7 @@
 
                             {#if subSection == "payment"}
                                 <div class="max-w-md mx-auto">
-                                    <button
-                                        on:click={() =>
-                                            (subSection = "orderDetails")}
-                                        class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                        >Back</button
-                                    >
+                                   
                                     <section
                                         class="guest-order-section bg-center bg-no-repeat"
                                     >
@@ -732,6 +731,13 @@
                                                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                                                 >Complete Order Process</button
                                             >
+
+                                            <button
+                                            on:click={() =>
+                                                (subSection = "orderDetails")}
+                                            class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                            >Back</button
+                                        >
 
                                             <!-- <button
                                                 type="button"
