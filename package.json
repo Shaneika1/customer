@@ -22,6 +22,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/core": "^0.34.2",
+		"@auth/sveltekit": "0.11.0",
 		"@supabase/supabase-js": "^2.44.4",
 		"axios": "^1.7.3",
 		"crypto-js": "^4.2.0",

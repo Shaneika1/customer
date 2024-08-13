@@ -58,11 +58,11 @@
 
 <div class=" flex items-center justify-center">
     <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
-        <h1
+        <h3
             class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 header"
         >
             Login
-        </h1>
+        </h3>
         <form>
             <div class="mb-4">
                 <label

@@ -3,7 +3,7 @@
     import supabase from "../lib/supabase";
 
     let loggedIn:boolean = false;
-    let aria = false
+    let aria = true
 
     const logout = () => {
         localStorage.clear()
@@ -17,6 +17,7 @@
     onMount(() => {
         if(localStorage.getItem('token')) {
             loggedIn = true;
+            aria = true
         }
     })
 
