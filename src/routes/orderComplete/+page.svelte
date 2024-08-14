@@ -58,8 +58,8 @@
             <h3
                 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
-               {#if status == 'success' } Your Order was Successful {/if}
-               {#if status == 'cancelled' } Your Order was Unsuccessful {/if}
+                Your Order was Successful
+               <!-- {#if status == 'cancelled' } Your Order was Unsuccessful {/if} -->
             </h3>
             <p
                 class="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 lg:px-48 normal-text"

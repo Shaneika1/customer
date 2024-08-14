@@ -696,7 +696,7 @@
                                                     corresponding bank account
                                                     (e.g., Scotia to Scotia, JN
                                                     to JN, CIBC to CIBC) to
-                                                    ensure same-day reflection or pay by card
+                                                    ensure same-day reflection. Bank Accounts will be available after you complete your order.
                                                 </p>
 
                                                 <p class="mb-2">
@@ -723,6 +723,9 @@
                                                 </p>
 
                                                 <p class="mb-5">This ensures a smooth and efficient grocery order process.</p>
+
+                                                
+                                                <p class="mb-5 font-bold">Bank Accounts will be available after you complete your order.</p>
                                             </div>
 
                                             <button
