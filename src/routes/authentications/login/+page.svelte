@@ -48,7 +48,7 @@
 
     const signIn = async (response) => {
         await supabase.auth.signInWithOAuth({
-            provider:'google',
+            provider: "google",
             options: {
                 redirectTo: `/auth/callback`,
             },
@@ -92,6 +92,13 @@
                     name="password"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
+                <div class="flex items-center justify-between">
+                    <a
+                        href="/authentications/forgot"
+                        class="links mt-2 font-bold text-sm"
+                        >Forgot your password?</a
+                    >
+                </div>
             </div>
 
             <div class="flex items-center justify-between">
@@ -105,8 +112,6 @@
                     class="links inline-block align-baseline font-bold text-sm"
                     >Don't have an account? Click here?</a
                 >
-
-                
             </div>
 
             <div

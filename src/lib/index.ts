@@ -100,7 +100,7 @@ export async function generateSubId(): Promise<number> {
 }
 
 export async function checkEmail (email:string): Promise<boolean>  {
-    let data = await supabase.from("users").select().eq("email", email)
+    let data = await supabase.from("customers").select().eq("email", email)
     if (data.data.length > 0) {
         return false
     }
