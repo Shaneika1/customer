@@ -23,14 +23,18 @@
             paramsObj[key] = value;
         }
 
-
         token = paramsObj.token
         
     };
 
+    function removeSlashes(str) {
+        return str.replace(/[\/\\]/g, '');
+    }
+
     const save = async () => {
         if (checkFields({ password, cPassword }) == true) {
            if(password == cPassword) {
+
 
                 let hash1 = b.AES.encrypt(password, 'efdafdsdfdsd').toString();
                 await supabase.from('customers').update({password: hash1}).eq('recoveryToken', token).then(async res => {
