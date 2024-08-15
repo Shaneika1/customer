@@ -22,7 +22,7 @@
                             email,
                             "efdafdsdfdsd",
                         ).toString();
-        alert(flag)
+        
         if (flag == false) {
             if (checkFields({ email }) == true) {
                 await supabase
