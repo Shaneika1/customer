@@ -672,11 +672,7 @@
                                         class="guest-order-section bg-center bg-no-repeat"
                                     >
                                         <div class="">
-                                            <p
-                                                class="mb-8 font-normal text-gray-700 lg:text-xl normal-text"
-                                            >
-                                                Are you paying by bank transfer?
-                                            </p>
+                                            
                                             <!-- <button
                                             type="button"
                                             on:click={() => order("card")}
@@ -687,7 +683,7 @@
                                             <p class="text-2xl font-bold mb-5">
                                                 You're almost there
                                             </p>
-                                            <div class="m-10">
+                                            <div class="my-10">
                                                 
 
                                                 <p class="mb-2">
