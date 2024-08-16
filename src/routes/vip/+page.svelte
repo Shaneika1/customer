@@ -43,7 +43,7 @@
             params.append("currency", "JMD");
             params.append("avs", "0");
             params.append("data", '{"a":"b"}');
-            params.append("environment", "sandbox");
+            params.append("environment", "live");
             params.append("fee_structure", "customer_pay");
             params.append("method", "credit_card");
             params.append("order_id", orderId.toString());
