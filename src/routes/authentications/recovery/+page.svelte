@@ -43,6 +43,7 @@
                         // swal.fire("Success", "New Password successfully created", "success");
                     })
                     swal.fire("Success", "New Password successfully created", "success");
+                    window.location.href = '/authentications/login'
                 })
            } else {
                 swal.fire("Oops", "Please make sure passwords match", "error");
