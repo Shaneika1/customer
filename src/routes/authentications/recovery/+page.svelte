@@ -40,7 +40,7 @@
                 let hash1 = b.AES.encrypt(password, 'efdafdsdfdsd').toString();
                 await supabase.from('customers').update({password: hash1}).eq('recoveryToken', token).then(async res => {
                     await supabase.from('customers').update({recoveryToken: null}).eq('email', user.email).then(res2 => {
-                        swal.fire("Success", "New Password successfully created", "success");
+                        // swal.fire("Success", "New Password successfully created", "success");
                     })
                     swal.fire("Success", "New Password successfully created", "success");
                 })
