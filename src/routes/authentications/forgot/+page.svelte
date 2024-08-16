@@ -18,22 +18,19 @@
     const sendEmail = async () => {
         let flag = await checkEmail(email);
         
-        let hash2 = b.AES.encrypt(
-                            email,
-                            "efdafdsdfdsd",
-                        ).toString();
+        let hash2 = (Math.random() * 1000000).toString();
         
         if (flag == false) {
             if (checkFields({ email }) == true) {
                 await supabase
                     .from("emails")
-                    .insert({ email, type: "recover", recoveryToken: removeSlashes(hash2) })
+                    .insert({ email, type: "recover", recoveryToken: hash2 })
                     .then(async (res) => {
                         // swal.fire("Success", "Email was send", "success");
 
                         await supabase
                             .from("customers")
-                            .update({ recoveryToken: removeSlashes(hash2) })
+                            .update({ recoveryToken: hash2 })
                             .eq("email", email)
                             .then((res) => {
                                 swal.fire(
