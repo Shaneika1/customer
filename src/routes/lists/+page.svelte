@@ -249,7 +249,7 @@
                     guest: false,
                     time,
                     budget,
-                    items:selectItems,
+                    items:selectedItems,
                     status: "Waiting for payment",
                     orderId,
                 })

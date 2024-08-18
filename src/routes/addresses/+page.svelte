@@ -33,6 +33,8 @@
 
     const deleteAddress = async (id: number) => {
         loading = true;
+        let token = localStorage.getItem('token')
+        let user = getUser(token)
         await supabase.from("addresses").delete().eq('id', id).then(res => {
             message = 'Address Deleted'
         })

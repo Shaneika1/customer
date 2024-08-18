@@ -62,6 +62,7 @@ export async function checkLogin() {
 export async function getUser(token:string): Promise<any> {
     let data = await supabase.from('customers').select().eq('token', token)
     if(data.data?.length == 0) {
+        window.localStorage.clear()
         window.location.href = '/'
     }
     return data.data[0]

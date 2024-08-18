@@ -32,6 +32,7 @@
     };
 
     onMount(() => {
+       
         loadData();
     });
 </script>
