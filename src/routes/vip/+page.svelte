@@ -149,7 +149,7 @@
                     <div class="w-100 flex justify-content mr-5">
                         {#if subscribed == false}
                             <button
-                                  style="background:#333333; "
+                                  style="background:rgb(14 14 14); "
                         class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 on:click={() => subscribe(30000, "Gold")}
                                 ><p class="text-yellow-500">Gold VIP Membership</p></button
@@ -159,7 +159,7 @@
                         {#if subscribed == true}
                         <button
                         disabled
-                        style="background:#333333; "
+                        style="background:rgb(14 14 14); "
                         class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         ><p class="text-yellow-500">You are already subscribed</p></button
                     >
@@ -167,7 +167,7 @@
                     </div>
                     <div class="w-100 flex justify-content mr-5">
                         <button
-                                style="background:#333333"
+                                style="background:rgb(14 14 14)"
                                 on:click={() => location.href = 'https://calendly.com/errandexecuter/30min'}
                                 class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 ><p class="text-yellow-500">
