@@ -341,7 +341,7 @@
 
 <section class="bg-white dark:bg-gray-900 vip lg:block p-5">
     <div
-        class="py-8 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16"
+        class="py-1 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16"
     >
         <div class="flex flex-col justify-center">
             <h1
@@ -356,11 +356,11 @@
             </p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
                 <a
-                    href="#"
+                    href="/vip"
                     style="background-color: #48c4c2;"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
                 >
-                    Coming Soon
+                    Go to VIP section
                     <svg
                         class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                         aria-hidden="true"

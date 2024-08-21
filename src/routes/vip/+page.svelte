@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import axios from "axios"
+    import axios from "axios";
     import moment from "moment";
     import {
         getUser,
@@ -26,68 +26,67 @@
         let data = await supabase.from("blogs").select();
         blogs = data.data;
         user = await getUser(localStorage.getItem("token"));
-        if(user.vip && user.vip.status == 'active') {
+        if (user.vip && user.vip.status == "active") {
             subscribed = true;
         }
         loading = false;
-        
     };
 
     const subscribe = async (value, type) => {
-        loading = true
-        
+        loading = true;
+
         let orderId = await generateSubId();
         const params = new URLSearchParams();
-            params.append("account_number", "2656269605");
-            params.append("country_code", "JM");
-            params.append("currency", "JMD");
-            params.append("avs", "0");
-            params.append("data", '{"a":"b"}');
-            params.append("environment", "live");
-            params.append("fee_structure", "customer_pay");
-            params.append("method", "credit_card");
-            params.append("order_id", orderId.toString());
-            params.append("origin", orderId.toString());
-            params.append(
-                "response_url",
-                `https://errandexecuter.com/vipComplete`,
-            );
-            params.append("total", parseInt(value.toString()).toFixed(2));
+        params.append("account_number", "2656269605");
+        params.append("country_code", "JM");
+        params.append("currency", "JMD");
+        params.append("avs", "0");
+        params.append("data", '{"a":"b"}');
+        params.append("environment", "live");
+        params.append("fee_structure", "customer_pay");
+        params.append("method", "credit_card");
+        params.append("order_id", orderId.toString());
+        params.append("origin", orderId.toString());
+        params.append("response_url", `https://errandexecuter.com/vipComplete`);
+        params.append("total", parseInt(value.toString()).toFixed(2));
 
-            // Make the POST request using axios with URLSearchParams
-            await axios
-                .post(
-                    "https://jm.wipayfinancial.com/plugins/payments/request",
-                    params,
-                    {
-                        headers: {
-                            Accept: "application/json",
-                            "Content-Type": "application/x-www-form-urlencoded",
-                        },
+        // Make the POST request using axios with URLSearchParams
+        await axios
+            .post(
+                "https://jm.wipayfinancial.com/plugins/payments/request",
+                params,
+                {
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/x-www-form-urlencoded",
                     },
-                )
-                .then(async (result) => {
-                    console.log(result.data.url);
-                    let currentTime = moment()
-                    let vipObj = {
-                        from: currentTime.format(),
-                        to: currentTime.add(1, 'month').format(),
-                        type,
-                        status: 'Pending'
-                    }
+                },
+            )
+            .then(async (result) => {
+                console.log(result.data.url);
+                let currentTime = moment();
+                let vipObj = {
+                    from: currentTime.format(),
+                    to: currentTime.add(1, "month").format(),
+                    type,
+                    status: "Pending",
+                };
 
-                    await supabase.from('customers').update({vip: vipObj, subId: orderId}).eq('id', user.id).then(res => {
-                        loading = false
+                await supabase
+                    .from("customers")
+                    .update({ vip: vipObj, subId: orderId })
+                    .eq("id", user.id)
+                    .then((res) => {
+                        loading = false;
                         window.location.href = result.data.url;
-                    })
-                   
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
+                    });
+            })
+            .catch((err) => {
+                console.error(err);
+            });
 
-                loading = false
-    }
+        loading = false;
+    };
 
     const selectBlog = (blog) => {
         curBlog = blog;
@@ -117,156 +116,142 @@
                 errands with the utmost discretion and priority.
             </p>
         </div>
-        <div class="mx-1 px-10 lg:grid lg:grid-cols-4" style="">
-            <div class="image-div block lg:hidden col-span-2  py-5">
-                <img src="/2.png" style='width:100%;' alt="Descriptive Alt Text" class="row-image" />
-              </div>
-            <div class=" col-span-2">
-                <div class=" ">
-                    <h3
-                        class="text-3xl"
-                        style="margin-bottom: 10px; "
+
+            <div class="mx-1 px-10  overflow-x-scroll">
+                <div class='lg:grid lg:grid-cols-3'>
+                    <div
+                        class="my-10 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
                     >
-                        The Gold Package
-                    </h3>
-                    <p class=" mb-3 text-lg">
-                        Introducing our VIP Gold package, your gateway to a life
-                        of unprecedented convenience and luxury. With this
-                        membership, you gain exclusive access to a dedicated
-                        personal assistant ready to streamline your daily chores
-                        and elevate your lifestyle.
-                    </p>
-                    <p class="mb-3 text-xl">Included Services:</p>
-                    <ul>
-                        <li class="mb-2 text-lg">
-                            Grocery Shopping Excellence: Once a month, rest easy
-                            as our trusted assistant handles your shopping list
-                            with care and precision, ensuring you get exactly
-                            what you desire, delivered straight to your door.
-                        </li>
-                        <li class="mb-2 text-lg">
-                            Home Maintenance & Laundry Bliss: Bi-weekly, our
-                            team transforms your home into a sanctuary with a
-                            thorough cleaning session and laundry service,
-                            offering you the utmost comfort.
-                        </li>
-                        <li class="mb-2 text-lg">
-                            Errands, Made Effortless: Twice a month, delegate
-                            any errand under an hour to our resourceful
-                            assistant. From gift purchasing to market runs,
-                            courier pickups, or even quick food orders, we've
-                            got it covered.
-                        </li>
-                        <li class="mb-2 text-lg">
-                            A Gourmet Treat: Enjoy the culinary artistry of a
-                            professional chef with a complimentary meal
-                            experience each month, valued at $4000JMD, curated
-                            exclusively for our VIP Gold members.
-                        </li>
-                    </ul>
-                    <p class="jumbo-text mb-3 text-lg">
-                        Experience the essence of luxury living and liberate
-                        your time for what truly matters with our VIP Gold
-                        package.
-                    </p>
-                
-                    {#if subscribed == false}
-                    <button
-                                            style="background-color:#e4c817; color:black;"
-                                            on:click={() =>
-                                                subscribe(4000, 'Gold')}
-                                            class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                            >Subscribe to our gold package</button
-                                        >
-                                        {/if}
+                        <div class="">
+                            <!-- Card content goes here -->
+                            <img
+                                src="/unnamed.jpg"
+                                style="width:100%;"
+                                alt="Descriptive Alt Text"
+                                class="row-image "
+                            />
 
-                                        {#if subscribed == true}
-                                        <button
-                                                                style="background-color:#e4c817; color:black;"
-                                                                
-                                                                class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                                                >You are already subscribed</button
-                                                            >
-                                                            {/if}
-                </div>
+                            <div class="m-5">
+                                <h2 class="text-2xl mb-2 mt-10">The Gold Package</h2>
+                                <p>
+                                    Introducing our VIP Gold package, your gateway to a
+                                    life of unprecedented convenience and luxury. With
+                                    this membership, you gain exclusive access to a
+                                    dedicated personal assistant ready to streamline
+                                    your daily chores and elevate your lifestyle.
+                                </p>
+                                <h3 class="my-5 text-xl">Included Services:</h3>
+                                <p class="my-2">
+                                    Grocery Shopping Excellence: Once a month, rest easy
+                                    as our trusted assistant handles your shopping list
+                                    with care and precision, ensuring you get exactly
+                                    what you desire, delivered straight to your door.
+                                </p>
+                                <p class="my-2">
+                                    Home Maintenance & Laundry Bliss: Bi-weekly, our
+                                    team transforms your home into a sanctuary with a
+                                    thorough cleaning session and laundry service,
+                                    offering you the utmost comfort.
+                                </p>
+                                <p class="my-2">
+                                    Errands, Made Effortless: Twice a month, delegate
+                                    any errand under an hour to our resourceful
+                                    assistant. From gift purchasing to market runs,
+                                    courier pickups, or even quick food orders, we've
+                                    got it covered.
+                                </p>
+                                <p class="my-2">
+                                    A Gourmet Treat: Enjoy the culinary artistry of a
+                                    professional chef with a complimentary meal
+                                    experience each month, valued at $4000JMD, curated
+                                    exclusively for our VIP Gold members.
+                                </p>
+                                <p class="my-2">
+                                    Experience the essence of luxury living and liberate
+                                    your time for what truly matters with our VIP Gold
+                                    package.
+                                </p>
 
-                <div class="container py-5">
-                    <div class="text-div">
-                      <h3
-                          class="text-3xl"
-                        style="margin-bottom: 10px; margin-top: 40px"
-                      >
-                        The Platinum Package
-                      </h3>
-                      <p class="jumbo-text mb-3 text-lg">
-                        Introducing our exquisite Platinum membership, tailored for those who
-                        demand the absolute pinnacle of convenience, luxury, and exclusive
-                        services.
-                      </p>
-                      <p class="mb-3 text-xl">Included Services:</p>
-                      <ul>
-                        <li class="mb-2 text-lg">
-                          Grocery Shopping Elegance: Twice a month, experience seamless
-                          grocery shopping as our dedicated assistants fulfill your list with
-                          precision and care, ensuring you receive only the best.
-                        </li>
-                        <li class="mb-2 text-lg">
-                          Home Maintenance & Revitalization: Bi-weekly, indulge in the luxury
-                          of a clean and refreshing home. Our expert team ensures your abode
-                          remains a serene sanctuary.
-                        </li>
-                        <li class="mb-2 text-lg">
-                          Errands, Made Effortless: Twice a month, delegate any errand under
-                          an hour to our resourceful assistant. From gift purchasing to market
-                          runs, courier pickups, or even quick food orders, we've got it
-                          covered.
-                        </li>
-                        <li class="mb-2 text-lg">
-                          Comprehensive Errand Assistance: Four times a month, delegate any
-                          errand, from gift purchasing to market runs, courier pickups, or
-                          quick food orders. Effortlessly accomplish your tasks with our
-                          expert assistance.
-                        </li>
-                        <li class="mb-2 text-lg">
-                          Luxurious Spa Experience: A complimentary spa ticket valued at
-                          $7000JMD, allowing you to rejuvenate and unwind in blissful
-                          tranquility.
-                        </li>
-                        <li class="mb-2 text-lg">
-                          Exclusive Babysitter Service: Once a month, unwind and enjoy a
-                          stress-free night out, leaving your little ones in the capable hands
-                          of our highly customizable expert babysitter service.
-                        </li>
-                      </ul>
-                      <p class="jumbo-text mb-3 text-lg">
-                        Customizable to your unique needs, this membership allows you to
-                        interview and select your personal assistant according to your
-                        preferences. Additionally, members enjoy the flexibility to tailor
-                        services based on their individual requirements.
-                      </p>
-                      {#if subscribed == false}
-                      <button
-                      on:click={() =>
-                          subscribe(7000, 'Platinum')}
-                      class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                      >Subscribe to our platinum package</button
-                  >
-                  {/if}
-                  {#if subscribed == true}
-                  <button
-                  
-                  class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  >You are already subscribed</button
-              >
-              {/if}
+                                <div class='w-100 flex justify-content mt-5'>
+                                    {#if subscribed == false}
+                                <button
+                                    style="background-color:#e4c817; color:black;"
+                                    on:click={() => subscribe(4000, "Gold")}
+                                    class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    >Subscribe to our gold package</button
+                                >
+                            {/if}
+
+                            {#if subscribed == true}
+                                <button
+                                    style="background-color:#e4c817; color:black;"
+                                    class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    >You are already subscribed</button
+                                >
+                            {/if}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                
-                </div>
-            </div>
+                    <div
+                        class="my-10 mx-5 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
+                    >
+                        <div class="">
+                            <!-- Card content goes here -->
+                            <img
+                                src="/unnamed2.jpg"
+                                style="width:100%;"
+                                alt="Descriptive Alt Text"
+                                class="row-image"
+                            />
 
-            <div class="image-div hidden lg:block col-span-2 px-20">
-                <img src="/2.png" style='width:100%;' alt="Descriptive Alt Text" class="row-image" />
-              </div>
+                            <div class="m-5">
+                                <h2 class="text-2xl mb-2 mt-10">The Platinum Package</h2>
+                                <p>
+                                    Introducing our exquisite Platinum membership, tailored for those who demand the absolute pinnacle of convenience, luxury, and exclusive services.
+                                </p>
+                                <h3 class="my-5 text-xl">Included Services:</h3>
+                                <p class="my-2">
+                                    Grocery Shopping Elegance: Twice a month, experience seamless grocery shopping as our dedicated assistants fulfill your list with precision and care, ensuring you receive only the best.
+                                </p>
+                                <p class="my-2">
+                                    Home Maintenance & Revitalization: Bi-weekly, indulge in the luxury of a clean and refreshing home. Our expert team ensures your abode remains a serene sanctuary.
+                                </p>
+                                <p class="my-2">
+                                    Errands, Made Effortless: Twice a month, delegate any errand under an hour to our resourceful assistant. From gift purchasing to market runs, courier pickups, or even quick food orders, we've got it covered.
+                                </p>
+                                <p class="my-2">
+                                    Comprehensive Errand Assistance: Four times a month, delegate any errand, from gift purchasing to market runs, courier pickups, or quick food orders. Effortlessly accomplish your tasks with our expert assistance.
+                                </p>
+                                <p class="my-2">
+                                    Luxurious Spa Experience: A complimentary spa ticket valued at $7000JMD, allowing you to rejuvenate and unwind in blissful tranquility.
+                                </p>
+
+                                <p class="my-2">
+                                    Exclusive Babysitter Service: Once a month, unwind and enjoy a stress-free night out, leaving your little ones in the capable hands of our highly customizable expert babysitter service.                        </p>
+
+                                <p class='mt-2'>Customizable to your unique needs, this membership allows you to interview and select your personal assistant according to your preferences. Additionally, members enjoy the flexibility to tailor services based on their individual requirements.</p>    
+
+                                <div class='w-100 flex justify-content mt-5'>
+                                    {#if subscribed == false}
+                                    <button
+                                        on:click={() => subscribe(7000, "Platinum")}
+                                        class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        >Subscribe to our platinum package</button
+                                    >
+                                {/if}
+                                {#if subscribed == true}
+                                    <button
+                                        class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        >You are already subscribed</button
+                                    >
+                                {/if}
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
         </div>
     </section>
 {/if}
