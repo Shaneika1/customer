@@ -180,10 +180,10 @@
             </div>
         </section>
 
-        <div class="mx-1 px-10 overflow-x-scroll">
+        <div class="mx-1 lg:px-10 overflow-x-scroll">
             <div class="lg:grid lg:grid-cols-3">
                 <div
-                    class="my-10 mx-5 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
+                    class="my-10 lg:mx-5 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform lg:transform lg:hover:scale-105 lg:hover:bg-gray-200"
                 >
                     <div class="">
                         <!-- Card content goes here -->
@@ -195,9 +195,9 @@
                         />
 
                         <div class="m-5">
-                            <h3 class="text-2xl mb-2 mt-10">
+                            <h2 class="text-2xl mb-2 mt-10">
                                 The Gold Package
-                            </h3>
+                            </h2>
                             <p>
                                 Experience the luxury of time well spent with
                                 our 3-month Grocery Concierge Membership. Let
@@ -269,7 +269,7 @@
                     </div>
                 </div>
                 <div
-                    class="my-10 mx-5 cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200"
+                    class="my-10  cards border border-gray-300 bg-dark rounded-lg shadow-md transition-transform transform lg:hover:scale-105 lg:hover:bg-gray-200"
                 >
                     <div class="">
                         <!-- Card content goes here -->
@@ -280,9 +280,9 @@
                             class="row-image"
                         />
                         <div class="m-5">
-                            <h3 class="text-2xl mb-2 mt-10">
+                            <h2 class="text-2xl mb-2 mt-10">
                                 The Platinum Package
-                            </h3>
+                            </h2>
                             <p>
                                 Toast to the luxury of time well spent. Our
                                 Platinum Membership offers you the ultimate
