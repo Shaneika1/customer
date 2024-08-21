@@ -141,10 +141,10 @@
 
                                 </p>
                                 
-                                <button style='cursor:pointer' class=' my-5' on:click={() => readGold = !readGold}>Click to read more</button>
+                                <!-- <button style='cursor:pointer' class=' my-5' on:click={() => readGold = !readGold}>Click to read more</button> -->
 
                                 {#if readGold == true}
-                                    <h3 class="my-5 text-xl">Included Services:</h3>
+                                    <!-- <h3 class="my-5 text-xl">Included Services:</h3>
                                     <p class="my-2">
                                         Grocery Shopping Excellence: Once a month, rest easy
                                         as our trusted assistant handles your shopping list
@@ -175,14 +175,14 @@
                                         your time for what truly matters with our VIP Gold
                                         package.
                                     </p>
-                                    <p class='my-2'></p>
+                                    <p class='my-2'></p> -->
                                 {/if}
                                 <div class='w-100 flex justify-content mt-5'>
                                     {#if subscribed == false}
                                 <button
                                     style="background-color:#e4c817; color:black;"
                                     on:click={() => subscribe(30000, "Gold")}
-                                    class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     >Subscribe to our gold package</button
                                 >
                             {/if}
@@ -190,7 +190,7 @@
                             {#if subscribed == true}
                                 <button
                                     style="background-color:#e4c817; color:black;"
-                                    class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     >You are already subscribed</button
                                 >
                             {/if}
@@ -214,12 +214,12 @@
                                 <p>
                                     Toast to the luxury of time well spent. Our Platinum Membership offers you the ultimate personalized service, crafted for those who value exclusivity and bespoke attention. With a dedicated personal assistant at your service, enjoy seamless grocery delivery, tailored premium offerings, and the sophistication of a lifestyle curated to perfection.
                                 </p>
-                            <button style='cursor:pointer' class=' my-2' on:click={() => readPlatinum = !readPlatinum}>Click to read more</button><br/>
+                            <!-- <button style='cursor:pointer' class=' my-2' on:click={() => readPlatinum = !readPlatinum}>Click to read more</button><br/> -->
 
                             {#if readPlatinum == true}
                             
                                 
-                                <h3 class="my-5 text-xl">Included Services:</h3>
+                                <!-- <h3 class="my-5 text-xl">Included Services:</h3>
                                 <p class="my-2">
                                     Grocery Shopping Elegance: Twice a month, experience seamless grocery shopping as our dedicated assistants fulfill your list with precision and care, ensuring you receive only the best.
                                 </p>
@@ -241,7 +241,7 @@
 
                                 <p class='mt-2 mb-5'>Customizable to your unique needs, this membership allows you to interview and select your personal assistant according to your preferences. Additionally, members enjoy the flexibility to tailor services based on their individual requirements.</p>    
 
-                               
+                                -->
                         
                             {/if}
 
@@ -259,10 +259,13 @@
                                     >You are already subscribed</button
                                 >
                             {/if} -->
+                            <div class='w-100 flex justify-content mt-5'>
+
+                           
                             <a href='https://calendly.com/errandexecuter/30min' class='mt-3'><button
-                                    class="mb-5 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    class="mb-5 confirm-buttons text-white  py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     >Schedule Meeting</button
-                                ></a>
+                                ></a> </div>
                             </div>
                         </div>
                         
