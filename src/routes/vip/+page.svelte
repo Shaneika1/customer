@@ -122,12 +122,8 @@
 
 <section class="bg-center bg-no-repeat bg-[url('/img/beach.jpg')] bg-gray-700 bg-blend-multiply">
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <h2 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Elevate Your Lifestyle with Our VIP Club</h2>
-        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"> Welcome to the Errand Executer VIP Club, where exclusivity meets
-            unparalleled convenience. For just $30,000 every three months,
-            enjoy the elite service of having a dedicated personal
-            assistant, one of our business owners, handling your grocery
-            errands with the utmost discretion and priority.</p>
+        <h2 class="mb-7 text-2xl text-left lg:text-center tracking-tight leading-none text-white md:text-5xl lg:text-5xl">Welcome to the world of personalized luxury with our <span style='color:#FFD700'>VIP CLUB</span></h2>
+        <p class="mb-8 text-left lg:text-center text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Step into a world where your time is your most treasured luxury. At the Errand Executer VIP Club, we don’t just offer convenience—we craft an experience that’s tailored to your every need. Imagine the peace of mind that comes with knowing your personal assistant, an integral part of our elite team, is dedicated to managing your tasks with the utmost care and discretion</p>
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                 Schedule a meeting
@@ -155,7 +151,7 @@
                             />
 
                             <div class="m-5">
-                                <h2 class="text-2xl mb-2 mt-10">The Gold Package</h2>
+                                <h3 class="text-2xl mb-2 mt-10">The Gold Package</h3>
                                 <p>
                                    
                                     Experience the luxury of time well spent with our 3-month Grocery Concierge Membership. Let your dedicated personal assistant take care of your monthly grocery delivery with precision and care, allowing you to indulge in life’s finer moments. Perfect for those who appreciate seamless service, whether we coordinate directly with you or your household staff, you’ll enjoy effortless convenience every month.
@@ -201,7 +197,7 @@
                                 <div class='w-100 flex justify-content mt-5'>
                                     {#if subscribed == false}
                                 <button
-                                    style="background-color:#e4c817; color:black;"
+                                    style="background-color:#B8860B; color:white;"
                                     on:click={() => subscribe(30000, "Gold")}
                                     class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     >Subscribe to our gold package</button
@@ -231,7 +227,7 @@
                                 class="row-image"
                             />
                             <div class="m-5">
-                            <h2 class="text-2xl mb-2 mt-10">The Platinum Package</h2>
+                            <h3 class="text-2xl mb-2 mt-10">The Platinum Package</h3>
                                 <p>
                                     Toast to the luxury of time well spent. Our Platinum Membership offers you the ultimate personalized service, crafted for those who value exclusivity and bespoke attention. With a dedicated personal assistant at your service, enjoy seamless grocery delivery, tailored premium offerings, and the sophistication of a lifestyle curated to perfection.
                                 </p>
@@ -283,9 +279,10 @@
                             <div class='w-100 flex justify-content mt-5'>
 
                            
-                            <a href='https://calendly.com/errandexecuter/30min' class='mt-3'><button
+                            <a href='https://calendly.com/errandexecuter/30min' class='mt-3 text-white'><button
+                                    style='background:#333333'
                                     class="mb-5 confirm-buttons text-white  py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                    >Schedule Meeting</button
+                                    ><p  class='text-white'>Schedule Meeting</p></button
                                 ></a> </div>
                             </div>
                         </div>
