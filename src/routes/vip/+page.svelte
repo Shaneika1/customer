@@ -210,7 +210,8 @@
                                 effortless convenience every month.
                             </p>
 
-                            <!-- <button style='cursor:pointer' class=' my-5' on:click={() => readGold = !readGold}>Click to read more</button> -->
+                            <button  style="background:rgb(14 14 14); "
+                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read more</button><br/>
 
                             {#if readGold == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
@@ -277,7 +278,7 @@
                             src="/unnamed2.jpg"
                             style="width:100%;"
                             alt="Descriptive Alt Text"
-                            class="row-image"
+                            class="row-image "
                         />
                         <div class="m-5">
                             <h2 class="text-2xl mb-2 mt-10">
@@ -293,7 +294,8 @@
                                 premium offerings, and the sophistication of a
                                 lifestyle curated to perfection.
                             </p>
-                            <!-- <button style='cursor:pointer' class=' my-2' on:click={() => readPlatinum = !readPlatinum}>Click to read more</button><br/> -->
+                            <button  style="background:rgb(14 14 14); "
+                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read more</button><br/>
 
                             {#if readPlatinum == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
@@ -316,9 +318,9 @@
                                 <p class="my-2">
                                     Exclusive Babysitter Service: Once a month, unwind and enjoy a stress-free night out, leaving your little ones in the capable hands of our highly customizable expert babysitter service.                        </p>
 
-                                <p class='mt-2 mb-5'>Customizable to your unique needs, this membership allows you to interview and select your personal assistant according to your preferences. Additionally, members enjoy the flexibility to tailor services based on their individual requirements.</p>    
+                                <p class='mt-2 mb-5'>Customizable to your unique needs, this membership allows you to interview and select your personal assistant according to your preferences. Additionally, members enjoy the flexibility to tailor services based on their individual requirements.</p>     -->
 
-                                -->
+                               
                             {/if}
 
                             <!-- <div class='w-100 flex justify-content mt-5'>
@@ -335,13 +337,13 @@
                                     >You are already subscribed</button
                                 >
                             {/if} -->
-                            <div class="w-100 flex justify-content mt-5">
+                            <div class="w-100 flex justify-content">
                                 <a
                                     href="https://calendly.com/errandexecuter/30min"
                                     class="mt-3 text-white"
                                     ><button
                                         style="background:#333333"
-                                        class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        class="mb-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                         ><p class="text-white">
                                             Schedule Meeting
                                         </p></button
