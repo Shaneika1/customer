@@ -149,19 +149,19 @@
                     <div class="w-100 flex justify-content mr-5">
                         {#if subscribed == false}
                             <button
-                                style="background-color:#B8860B; color:white;"
+                                  style="background:#333333; "
+                        class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                 on:click={() => subscribe(30000, "Gold")}
-                                class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                >Subscribe to our gold package</button
+                                ><p class="text-yellow-500">Gold VIP Membership</p></button
                             >
                         {/if}
 
                         {#if subscribed == true}
                         <button
                         disabled
-                        style="background-color:#B8860B; color:white;"
+                        style="background:#333333; "
                         class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        >You are already subscribed</button
+                        ><p class="text-yellow-500">You are already subscribed</p></button
                     >
                         {/if}
                     </div>
@@ -170,8 +170,8 @@
                                 style="background:#333333"
                                 on:click={() => location.href = 'https://calendly.com/errandexecuter/30min'}
                                 class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                ><p class="text-white">
-                                    Schedule Meeting
+                                ><p class="text-yellow-500">
+                                    Platinium Membership
                                 </p></button
                             >
                         
