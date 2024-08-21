@@ -211,7 +211,8 @@
                             </p>
 
                             <button  style="background:rgb(14 14 14); "
-                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read more</button><br/>
+                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
+                            style="color:#FFD700">Read more</span></button><br/>
 
                             {#if readGold == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
@@ -295,7 +296,8 @@
                                 lifestyle curated to perfection.
                             </p>
                             <button  style="background:rgb(14 14 14); "
-                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Read more</button><br/>
+                            class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
+                            style="color:#FFD700">Read more</span></button><br/>
 
                             {#if readPlatinum == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
