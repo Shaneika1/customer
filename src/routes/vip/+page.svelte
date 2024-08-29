@@ -27,7 +27,7 @@
         loading = true;
         let data = await supabase.from("blogs").select();
         blogs = data.data;
-        user = await getUser(localStorage.getItem("token"));
+        
         if (user.vip && user.vip.status == "active") {
             subscribed = true;
         }
@@ -35,6 +35,7 @@
     };
 
     const subscribe = async (value, type) => {
+        user = await getUser(localStorage.getItem("token"));
         loading = true;
 
         let orderId = await generateSubId();

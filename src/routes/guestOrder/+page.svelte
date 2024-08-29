@@ -150,7 +150,7 @@
                 add as well as how many.
             </p>
 
-            <div class="lg:grid lg:grid-cols-2 text-left px-24">
+            <div class="lg:grid lg:grid-cols-2 text-left lg:px-24">
                 <div class="lg:my-5 my-10">
                     <div class="mb-4 w-50">
                         <label
