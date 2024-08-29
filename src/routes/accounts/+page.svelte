@@ -26,7 +26,7 @@
                 <p class="text-xl font-bold">Scotia Bank</p>
                 <p>Name: Errand Executer</p>
                 <p>Account Type: Savings</p>
-                <p>Account Number: 002094536151</p>
+                <p>Account Number: 001028070</p>
                 <p>Dominica Drive Branch</p>
             </div>
         </div>

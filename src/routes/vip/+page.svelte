@@ -45,7 +45,7 @@
         params.append("currency", "JMD");
         params.append("avs", "0");
         params.append("data", '{"a":"b"}');
-        params.append("environment", "live");
+        params.append("environment", "sandbox");
         params.append("fee_structure", "customer_pay");
         params.append("method", "credit_card");
         params.append("order_id", orderId.toString());
@@ -213,7 +213,7 @@
 
                             <button  style="background:rgb(14 14 14); "
                             class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
-                            style="color:#FFD700">Read more</span></button><br/>
+                            style="color:#FFD700">Learn more</span></button><br/>
 
                             {#if readGold == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
@@ -256,7 +256,7 @@
                                         on:click={() =>
                                             subscribe(30000, "Gold")}
                                         class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                        >Subscribe to our gold package</button
+                                        > Start Your Membership</button
                                     >
                                 {/if}
 
@@ -298,7 +298,7 @@
                             </p>
                             <button  style="background:rgb(14 14 14); "
                             class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
-                            style="color:#FFD700">Read more</span></button><br/>
+                            style="color:#FFD700">Learn more</span></button><br/>
 
                             {#if readPlatinum == true}
                                 <!-- <h3 class="my-5 text-xl">Included Services:</h3>
@@ -348,7 +348,7 @@
                                         style="background:#333333"
                                         class="mb-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                         ><p class="text-white">
-                                            Schedule Meeting
+                                            Customize Your Membership
                                         </p></button
                                     ></a
                                 >
