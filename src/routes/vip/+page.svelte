@@ -35,8 +35,12 @@
     };
 
     const subscribe = async (value, type) => {
+        
         user = await getUser(localStorage.getItem("token"));
-        loading = true;
+        if(user.vip != null) {
+            swal.fire('oops', 'You are already subscribed', 'error')
+        } else {
+            loading = true;
 
         let orderId = await generateSubId();
         const params = new URLSearchParams();
@@ -70,7 +74,7 @@
                 let currentTime = moment();
                 let vipObj = {
                     from: currentTime.format(),
-                    to: currentTime.add(1, "month").format(),
+                    to: currentTime.add(3, "month").format(),
                     type,
                     status: "Pending",
                 };
@@ -89,6 +93,8 @@
             });
 
         loading = false;
+        }
+        
     };
 
     const selectBlog = (blog) => {
