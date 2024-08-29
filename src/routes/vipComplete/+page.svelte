@@ -40,7 +40,13 @@
                 });
         } else {
             status = 'cancelled'
-           
+            await supabase
+                .from("customers")
+                .update({ vip: null, subId: null })
+                .eq("subId", paramsObj.order_id)
+                .then((res) => {
+                    loading = false;
+                });
         }
     };
 
