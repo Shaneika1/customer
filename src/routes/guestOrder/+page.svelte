@@ -3,7 +3,8 @@
     import swal from "sweetalert2";
     import supabase from "../../lib/supabase.ts";
     import axios from "axios";
-    import { generateRandomNumber, generateOrderId } from "../../lib/index.js";
+    import { generateRandomNumber, generateOrderId, getUser } from "../../lib/index.js";
+    import { onMount } from "svelte";
 
     var newItem: string = "";
     var quantity: number = 1;
@@ -132,6 +133,10 @@
                 });
         }
     };
+
+    onMount(async () => {
+        let user = await getUser(localStorage.getItem("token"));
+    })
 </script>
 
 {#if section == "order"}
