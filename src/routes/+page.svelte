@@ -344,11 +344,11 @@
         class="py-1 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16"
     >
         <div class="flex flex-col justify-center">
-            <h1
+            <h3
                 class="mb-4 text-4xl font-bold tracking-tight lg:mt-5 leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-700 header"
             >
                 Elevate Your Lifestyle with Our <span class='text-yellow-700'>VIP CLUB</span>
-            </h1>
+            </h3>
             <p
                 class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-700 normal-text"
             >
