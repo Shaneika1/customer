@@ -155,12 +155,11 @@
                 >
                     <div class="w-100 flex justify-content mr-5">
                         {#if subscribed == false}
-                            <button
+                            <a href='#gold'><button
                                   style="background:rgb(14 14 14); "
                         class="lg:mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                on:click={() => subscribe(30000, "Gold")}
                                 ><p class="text-yellow-500">Gold VIP Membership</p></button
-                            >
+                            ></a>
                         {/if}
 
                         {#if subscribed == true}
@@ -173,14 +172,14 @@
                         {/if}
                     </div>
                     <div class="w-100 flex justify-content mr-5">
-                        <button
-                                style="background:rgb(14 14 14)"
-                                on:click={() => location.href = 'https://calendly.com/errandexecuter/30min'}
-                                class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                ><p class="text-yellow-500">
+                        <a href='#plat'><button
+                        style="color:white; background:rgb(14 14 14);"
+
+                                class="mb-5 confirm-buttons  py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                ><p>
                                     Platinium Membership
                                 </p></button
-                            >
+                            ></a>
                         
                     </div>
                 </div>
@@ -201,7 +200,7 @@
                             class="row-image"
                         />
 
-                        <div class="m-5">
+                        <div id='gold' class="m-5">
                             <h2 class="text-2xl mb-2 mt-10">
                                 The Gold Package
                             </h2>
@@ -257,7 +256,7 @@
                             alt="Descriptive Alt Text"
                             class="row-image "
                         />
-                        <div class="m-5">
+                        <div id='plat' class="m-5">
                             <h2 class="text-2xl mb-2 mt-10">
                                 The Platinum Package
                             </h2>
