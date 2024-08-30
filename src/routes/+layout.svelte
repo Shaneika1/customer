@@ -145,7 +145,7 @@
                 {/if}
                 <li>
                     {#if loggedIn == false}
-                    <a href="/authentications/login" style='background-color: #48c4c2;' class="mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
+                    <a href="/authentications/login" style='background-color: #48c4c2;' class="cursor mt-5 lg:mt-0 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded">
                         Login
                       </a>
                       {/if}

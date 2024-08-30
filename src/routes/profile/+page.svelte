@@ -251,7 +251,7 @@
                             {/if}
                             {#if subscription.type == "Gold"}
                                 <span class="text-xl text-yellow-600 font-bold"
-                                    >Platinum</span
+                                    >Gold</span
                                 >
                             {/if}
                         </p>
@@ -282,49 +282,10 @@
                                 The Gold Package
                             </h3>
                             <p class=" mb-3 text-lg">
-                                Introducing our VIP Gold package, your gateway
-                                to a life of unprecedented convenience and
-                                luxury. With this membership, you gain exclusive
-                                access to a dedicated personal assistant ready
-                                to streamline your daily chores and elevate your
-                                lifestyle.
+                                Our Gold Membership is designed for those who appreciate simplicity and efficiency. Enjoy one seamless grocery delivery per month with the option to have your items thoughtfully packed into your refrigerator. With your dedicated personal assistant, you’ll bypass the website and experience priority scheduling, ensuring your needs are met with the utmost care and precision.
+
                             </p>
-                            <p class="mb-3 text-xl">Included Services:</p>
-                            <ul>
-                                <li class="mb-2 text-lg">
-                                    Grocery Shopping Excellence: Once a month,
-                                    rest easy as our trusted assistant handles
-                                    your shopping list with care and precision,
-                                    ensuring you get exactly what you desire,
-                                    delivered straight to your door.
-                                </li>
-                                <li class="mb-2 text-lg">
-                                    Home Maintenance & Laundry Bliss: Bi-weekly,
-                                    our team transforms your home into a
-                                    sanctuary with a thorough cleaning session
-                                    and laundry service, offering you the utmost
-                                    comfort.
-                                </li>
-                                <li class="mb-2 text-lg">
-                                    Errands, Made Effortless: Twice a month,
-                                    delegate any errand under an hour to our
-                                    resourceful assistant. From gift purchasing
-                                    to market runs, courier pickups, or even
-                                    quick food orders, we've got it covered.
-                                </li>
-                                <li class="mb-2 text-lg">
-                                    A Gourmet Treat: Enjoy the culinary artistry
-                                    of a professional chef with a complimentary
-                                    meal experience each month, valued at
-                                    $4000JMD, curated exclusively for our VIP
-                                    Gold members.
-                                </li>
-                            </ul>
-                            <p class="jumbo-text mb-3 text-lg">
-                                Experience the essence of luxury living and
-                                liberate your time for what truly matters with
-                                our VIP Gold package.
-                            </p>
+                            
                         </div>
                     {/if}
 
@@ -338,66 +299,10 @@
                                     The Platinum Package
                                 </h3>
                                 <p class="jumbo-text mb-3 text-lg">
-                                    Introducing our exquisite Platinum
-                                    membership, tailored for those who demand
-                                    the absolute pinnacle of convenience,
-                                    luxury, and exclusive services.
+                                    The Platinum Membership is the pinnacle of personalized service. Tailored specifically to your unique lifestyle, this membership begins with a 30-minute consultation to understand your specific needs. Whether you require specialized errands or have distinct preferences, we craft a bespoke package just for you. Experience luxury, convenience, and exclusivity at its finest, all curated to fit your life perfectly.
                                 </p>
-                                <p class="mb-3 text-xl">Included Services:</p>
-                                <ul>
-                                    <li class="mb-2 text-lg">
-                                        Grocery Shopping Elegance: Twice a
-                                        month, experience seamless grocery
-                                        shopping as our dedicated assistants
-                                        fulfill your list with precision and
-                                        care, ensuring you receive only the
-                                        best.
-                                    </li>
-                                    <li class="mb-2 text-lg">
-                                        Home Maintenance & Revitalization:
-                                        Bi-weekly, indulge in the luxury of a
-                                        clean and refreshing home. Our expert
-                                        team ensures your abode remains a serene
-                                        sanctuary.
-                                    </li>
-                                    <li class="mb-2 text-lg">
-                                        Errands, Made Effortless: Twice a month,
-                                        delegate any errand under an hour to our
-                                        resourceful assistant. From gift
-                                        purchasing to market runs, courier
-                                        pickups, or even quick food orders,
-                                        we've got it covered.
-                                    </li>
-                                    <li class="mb-2 text-lg">
-                                        Comprehensive Errand Assistance: Four
-                                        times a month, delegate any errand, from
-                                        gift purchasing to market runs, courier
-                                        pickups, or quick food orders.
-                                        Effortlessly accomplish your tasks with
-                                        our expert assistance.
-                                    </li>
-                                    <li class="mb-2 text-lg">
-                                        Luxurious Spa Experience: A
-                                        complimentary spa ticket valued at
-                                        $7000JMD, allowing you to rejuvenate and
-                                        unwind in blissful tranquility.
-                                    </li>
-                                    <li class="mb-2 text-lg">
-                                        Exclusive Babysitter Service: Once a
-                                        month, unwind and enjoy a stress-free
-                                        night out, leaving your little ones in
-                                        the capable hands of our highly
-                                        customizable expert babysitter service.
-                                    </li>
-                                </ul>
-                                <p class="jumbo-text mb-3 text-lg">
-                                    Customizable to your unique needs, this
-                                    membership allows you to interview and
-                                    select your personal assistant according to
-                                    your preferences. Additionally, members
-                                    enjoy the flexibility to tailor services
-                                    based on their individual requirements.
-                                </p>
+                               
+                                
                             </div>
                         </div>
                     {/if}
