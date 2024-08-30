@@ -10,7 +10,6 @@
     } from "$lib/index";
     import supabase from "$lib/supabase";
     import swal from "sweetalert2";
-    import { read } from "$app/server";
 
     let blogs = [];
     let item = "";
