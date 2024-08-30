@@ -49,7 +49,7 @@
         params.append("currency", "JMD");
         params.append("avs", "0");
         params.append("data", '{"a":"b"}');
-        params.append("environment", "sandbox");
+        params.append("environment", "live");
         params.append("fee_structure", "customer_pay");
         params.append("method", "credit_card");
         params.append("order_id", orderId.toString());
@@ -299,9 +299,9 @@
                                     href="https://calendly.com/errandexecuter/30min"
                                     class="mt-3 text-white"
                                     ><button
-                                        style="background:#333333"
-                                        class="mb-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                                        ><p class="text-white">
+                                        style="color:linear-gradient(180deg, #A8A9AD, #B4B5B8, #C0C0C3, #CBCCCD, #D7D7D8, #E3E3E3); background:rgb(14 14 14); "
+                                        class="mb-5 confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        ><p class="">
                                             Customize Your Membership
                                         </p></button
                                     ></a
