@@ -339,16 +339,16 @@
     </div>
 </section>
 
-<section class="bg-white dark:bg-gray-900 vip lg:block p-5">
+<section class=" dark:bg-gray-900 vip lg:block p-5">
     <div
         class="py-1 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16"
     >
         <div class="flex flex-col justify-center">
-            <h2
-                class="mb-4 text-4xl font-extrabold tracking-tight lg:mt-20 leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-700 header"
+            <h1
+                class="mb-4 text-4xl font-bold tracking-tight lg:mt-5 leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-700 header"
             >
                 Elevate Your Lifestyle with Our <span class='text-yellow-700'>VIP CLUB</span>
-            </h2>
+            </h1>
             <p
                 class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-700 normal-text"
             >
