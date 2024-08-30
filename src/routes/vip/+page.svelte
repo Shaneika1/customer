@@ -10,6 +10,7 @@
     } from "$lib/index";
     import supabase from "$lib/supabase";
     import swal from "sweetalert2";
+    import { read } from "$app/server";
 
     let blogs = [];
     let item = "";
@@ -217,43 +218,12 @@
                                 effortless convenience every month.
                             </p>
 
-                            <button  style="background:rgb(14 14 14); "
+                            <button on:click={() => readGold = !readGold} style="background:rgb(14 14 14); "
                             class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
                             style="color:#FFD700">Learn more</span></button><br/>
 
                             {#if readGold == true}
-                                <!-- <h3 class="my-5 text-xl">Included Services:</h3>
-                                    <p class="my-2">
-                                        Grocery Shopping Excellence: Once a month, rest easy
-                                        as our trusted assistant handles your shopping list
-                                        with care and precision, ensuring you get exactly
-                                        what you desire, delivered straight to your door.
-                                    </p>
-                                    <p class="my-2">
-                                        Home Maintenance & Laundry Bliss: Bi-weekly, our
-                                        team transforms your home into a sanctuary with a
-                                        thorough cleaning session and laundry service,
-                                        offering you the utmost comfort.
-                                    </p>
-                                    <p class="my-2">
-                                        Errands, Made Effortless: Twice a month, delegate
-                                        any errand under an hour to our resourceful
-                                        assistant. From gift purchasing to market runs,
-                                        courier pickups, or even quick food orders, we've
-                                        got it covered.
-                                    </p>
-                                    <p class="my-2">
-                                        A Gourmet Treat: Enjoy the culinary artistry of a
-                                        professional chef with a complimentary meal
-                                        experience each month, valued at $4000JMD, curated
-                                        exclusively for our VIP Gold members.
-                                    </p>
-                                    <p class="my-2">
-                                        Experience the essence of luxury living and liberate
-                                        your time for what truly matters with our VIP Gold
-                                        package.
-                                    </p>
-                                    <p class='my-2'></p> -->
+                               <p class='mt-3'>Our Gold Membership is designed for those who appreciate simplicity and efficiency. Enjoy one seamless grocery delivery per month with the option to have your items thoughtfully packed into your refrigerator. With your dedicated personal assistant, you’ll bypass the website and experience priority scheduling, ensuring your needs are met with the utmost care and precision.</p>
                             {/if}
                             <div class="w-100 flex justify-content mt-5">
                                 {#if subscribed == false}
@@ -302,33 +272,12 @@
                                 premium offerings, and the sophistication of a
                                 lifestyle curated to perfection.
                             </p>
-                            <button  style="background:rgb(14 14 14); "
+                            <button on:click={() => readPlatinum = !readPlatinum} style="background:rgb(14 14 14); "
                             class="mt-5  confirm-buttons text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"><span
                             style="color:#FFD700">Learn more</span></button><br/>
 
                             {#if readPlatinum == true}
-                                <!-- <h3 class="my-5 text-xl">Included Services:</h3>
-                                <p class="my-2">
-                                    Grocery Shopping Elegance: Twice a month, experience seamless grocery shopping as our dedicated assistants fulfill your list with precision and care, ensuring you receive only the best.
-                                </p>
-                                <p class="my-2">
-                                    Home Maintenance & Revitalization: Bi-weekly, indulge in the luxury of a clean and refreshing home. Our expert team ensures your abode remains a serene sanctuary.
-                                </p>
-                                <p class="my-2">
-                                    Errands, Made Effortless: Twice a month, delegate any errand under an hour to our resourceful assistant. From gift purchasing to market runs, courier pickups, or even quick food orders, we've got it covered.
-                                </p>
-                                <p class="my-2">
-                                    Comprehensive Errand Assistance: Four times a month, delegate any errand, from gift purchasing to market runs, courier pickups, or quick food orders. Effortlessly accomplish your tasks with our expert assistance.
-                                </p>
-                                <p class="my-2">
-                                    Luxurious Spa Experience: A complimentary spa ticket valued at $7000JMD, allowing you to rejuvenate and unwind in blissful tranquility.
-                                </p>
-
-                                <p class="my-2">
-                                    Exclusive Babysitter Service: Once a month, unwind and enjoy a stress-free night out, leaving your little ones in the capable hands of our highly customizable expert babysitter service.                        </p>
-
-                                <p class='mt-2 mb-5'>Customizable to your unique needs, this membership allows you to interview and select your personal assistant according to your preferences. Additionally, members enjoy the flexibility to tailor services based on their individual requirements.</p>     -->
-
+                                <p class='mt-3'>The Platinum Membership is the pinnacle of personalized service. Tailored specifically to your unique lifestyle, this membership begins with a 30-minute consultation to understand your specific needs. Whether you require specialized errands or have distinct preferences, we craft a bespoke package just for you. Experience luxury, convenience, and exclusivity at its finest, all curated to fit your life perfectly.</p>
                                
                             {/if}
 
