@@ -21,6 +21,7 @@
             .insert({ message: text, orderId, from: user })
             .then((res) => {
                 loadData();
+                text = ""
             });
 
         supabase
@@ -54,11 +55,11 @@
             })
             .subscribe((status) => {
                 if (status === "SUBSCRIBED") {
-                    channel.send({
-                        type: "broadcast",
-                        event: "cursor-pos",
-                        payload: { x: Math.random(), y: Math.random() },
-                    });
+                    // channel.send({
+                    //     type: "broadcast",
+                    //     event: "cursor-pos",
+                    //     payload: { x: Math.random(), y: Math.random() },
+                    // });
                 }
             });
     };
