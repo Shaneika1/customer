@@ -12,6 +12,7 @@
     } from "$lib/index";
     import supabase from "$lib/supabase";
     import swal from "sweetalert2";
+    import Chat from '../../components/chat.svelte'
 
     let orders = []
     let worker = {}
@@ -20,6 +21,12 @@
     let section = 'table'
 
     let curUser = {}
+    let currentOrder = null
+
+    const setChat = (order) => {
+        currentOrder = order;
+        section = 'chat'
+    }
 
     const loadInfo = async () => {
         let token = localStorage.getItem("token");
@@ -93,7 +100,7 @@
                     <th>Driver</th>
                     <th># of items</th>
                     <th>Receipt</th>
-
+                    <th>Chat</th>
                 </tr>
                 {#each orders as order}
                     <tr>
@@ -117,7 +124,10 @@
 
                         {#if order.receipt != null}
                         <td><a href={order.receipt}>View</a></td>
+                       
                     {/if}
+                    <td><button on:click={() => setChat(order.id)} class="mt-2 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        >Chat</button></td>
                     </tr>
                 {/each}
             </table>
@@ -141,6 +151,10 @@
                     <p>{worker.bio}</p>
                 </div>
             {/if}
+
+    {#if section == 'chat'}
+                <Chat orderId={currentOrder} back={() => section = 'table'}/>
+    {/if}
     </div>
     </section>
 {/if}        
