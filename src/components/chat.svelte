@@ -15,13 +15,18 @@
     let room = orderId
     const channel = supabase.channel(room);
 
-    const send = async () => {
+    const send = async (e) => {
+        e.preventDefault();
         await supabase
             .from("messages")
             .insert({ message: text, orderId, from: user })
             .then((res) => {
                 loadData();
                 text = ""
+                // const scrollableDiv = document.getElementById('scrollable-div');
+
+                // // Scroll to the bottom of the div
+                // scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
             });
 
         supabase
@@ -42,16 +47,35 @@
         await supabase
             .from("messages")
             .select()
+            .order('id', { ascending: true })
             .eq("orderId", orderId)
             .then((res) => {
                 messages = res.data;
                 loading = false;
+
+            }).then(res=> {
+                loading = false
+                // const scrollableDiv = document.getElementById('scrollable-div');
+
+                // // Scroll to the bottom of the div
+                // scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
             });
+
+
+        
+    };
+
+    onMount(() => {
+        loadData();
 
         channel
             .on("broadcast", { event: "cursor-pos" }, (payload) => {
                 // console.log("Cursor position received!", payload);
                 loadData()
+                // const scrollableDiv = document.getElementById('scrollable-div');
+
+                // // Scroll to the bottom of the div
+                // scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
             })
             .subscribe((status) => {
                 if (status === "SUBSCRIBED") {
@@ -62,10 +86,6 @@
                     // });
                 }
             });
-    };
-
-    onMount(() => {
-        loadData();
     });
 </script>
 
@@ -125,18 +145,18 @@
                         {/if}
                     {/each}
                 </div>
-                <div class="grid grid-col-5">
+                <form on:submit={(e) => send(e)} class="grid grid-col-5">
                     <input
                         type="text"
                         class="border-3 mt-2 p-3 col-span-3"
                         bind:value={text}
                     />
                     <button
-                        on:click={() => send()}
+                        type='submit'
                         class="mt-2 confirm-buttons text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >Send</button
                     >
-                </div>
+                </form>
             </div>
         </div>
     </div>
