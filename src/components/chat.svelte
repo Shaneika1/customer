@@ -61,7 +61,10 @@
                 // scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
             });
 
+            const scrollableDiv = document.getElementById('scrollable-div');
 
+            // Scroll to the bottom of the div
+            scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
         
     };
 
