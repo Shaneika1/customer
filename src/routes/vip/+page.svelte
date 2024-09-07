@@ -70,7 +70,7 @@
                 },
             )
             .then(async (result) => {
-                console.log(result.data.url);
+                
                 let currentTime = moment();
                 let vipObj = {
                     from: currentTime.format(),

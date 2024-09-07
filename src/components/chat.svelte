@@ -37,13 +37,13 @@
                 payload: { x: Math.random(), y: Math.random() },
             })
             .then((res2) => {
-                // console.log(res2);
+                // 
             });
     };
 
     const loadData = async () => {
         user = await getUser(localStorage.getItem("token"));
-        console.log(orderId);
+        
         await supabase
             .from("messages")
             .select()
@@ -62,6 +62,7 @@
             });
 
             const scrollableDiv = document.getElementById('scrollable-div');
+            console.log(scrollableDiv)
             if (scrollableDiv == null) {
                 loadData()
             } else {
@@ -76,7 +77,7 @@
 
         channel
             .on("broadcast", { event: "cursor-pos" }, (payload) => {
-                // console.log("Cursor position received!", payload);
+                // 
                 loadData()
                 // const scrollableDiv = document.getElementById('scrollable-div');
 

@@ -128,7 +128,7 @@
                     },
                 )
                 .then((result) => {
-                    console.log(result.data.url);
+                    
                     window.location.href = result.data.url;
                 });
         }

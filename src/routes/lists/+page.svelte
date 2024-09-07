@@ -57,9 +57,9 @@
         email = user.email;
         phone = user.phone;
 
-        console.log(user);
+        
         let data = await supabase.from("lists").select().eq("user", user.id);
-        console.log(data.error);
+        
         lists = data.data;
         selectedItems = lists.items
 
@@ -309,7 +309,7 @@
                     },
                 )
                 .then((result) => {
-                    console.log(result.data.url);
+                    
                     window.location.href = result.data.url;
                 })
                 .catch((err) => {

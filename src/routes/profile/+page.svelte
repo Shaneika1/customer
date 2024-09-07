@@ -77,7 +77,7 @@
             .then((res) => {
                 worker = res.data[0];
                 section = "driver";
-                console.log(worker);
+                
             });
     };
 

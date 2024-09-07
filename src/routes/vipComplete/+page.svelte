@@ -25,7 +25,7 @@
         }
 
         // Display the parameters
-        console.log(paramsObj);
+        
 
         if (paramsObj.status == "success") {
             status = 'success'
