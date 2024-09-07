@@ -62,9 +62,12 @@
             });
 
             const scrollableDiv = document.getElementById('scrollable-div');
-
+            if (scrollableDiv == null) {
+                loadData()
+            } else {
+                scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+            }
             // Scroll to the bottom of the div
-            scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
         
     };
 
