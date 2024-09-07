@@ -99,7 +99,7 @@
 
         <div class="lg:grid lg:grid-cols-2 mt-5">
             <div>
-                <div class="border-2 p-5 overflow-auto"  style="max-height:500px; ">
+                <div class="border-2 p-5 overflow-auto"  style="max-height:500px; " id="scrollable-div">
                     {#each messages as message}
                         {#if message.from.id == user.id}
                             <div class="flex justify-end">
