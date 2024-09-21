@@ -97,7 +97,7 @@
 </script>
 
 {#if loading == false}
-    <div class="mt-10 m-10">
+    <div class="lg:mt-10 lg:m-10">
         <p class="text-2xl">Chat Room</p>
         <small>Speak to customers here</small>
 

@@ -71,7 +71,7 @@
 
 {#if loading == false}
     <section class="guest-order-section bg-center bg-no-repeat">
-        <div class="px-4 mx-auto text-center pt-10 lg:py-16">
+        <div class="px-4 lg:mx-auto text-center pt-10 lg:py-16">
             <h3
                 class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl header"
             >
