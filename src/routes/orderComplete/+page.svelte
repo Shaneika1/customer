@@ -13,6 +13,24 @@
     let loading = false;
     let status = '';
 
+    const sendEmail = async () => {
+        
+        if (true) {
+            if (true) {
+                await supabase
+                    .from("emails")
+                    .insert({ email: 'errandexecuter@gmail.com', type: "order", recoveryToken: null })
+                    .then(async (res) => {
+                   
+                    });
+            } else {
+                swal.fire("Oops", "Please enter data in all fields", "error");
+            }
+        } else {
+            swal.fire("Oops", "Email doesn't exist", "error");
+        }
+    };
+
     const getParams = async () => {
         // Get the query parameters from the current URL
         const params = new URLSearchParams(window.location.search);
@@ -33,6 +51,7 @@
                 .update({ status: "Pending" })
                 .eq("orderId", paramsObj.order_id)
                 .then((res) => {
+                    // sendEmail()
                     loading = false;
                 });
         } else {

@@ -232,6 +232,24 @@
         selectedItems = tempList
     }
 
+    const sendEmail = async () => {
+        
+        if (true) {
+            if (true) {
+                await supabase
+                    .from("emails")
+                    .insert({ email: 'errandexecuter@gmail.com', type: "order", recoveryToken: null })
+                    .then(async (res) => {
+                   
+                    });
+            } else {
+                swal.fire("Oops", "Please enter data in all fields", "error");
+            }
+        } else {
+            swal.fire("Oops", "Email doesn't exist", "error");
+        }
+    };
+
     const order = async (paymentType: string) => {
         let orderId = await generateOrderId();
         if (paymentType == "bank") {
@@ -254,6 +272,7 @@
                     orderId,
                 })
                 .then((res) => {
+                    sendEmail()
                     swal.fire(
                         "Success",
                         "Order has been placed",
